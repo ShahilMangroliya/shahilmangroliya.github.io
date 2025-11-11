@@ -28,7 +28,7 @@ const Contact = () => {
                 <div className="space-y-4">
                   {/* Email */}
                   <a 
-                    href="mailto:shahil.mangroliya@outlook.com"
+                    href="mailto:shahil.mangroliya123@gmail.com"
                     className="flex items-start gap-4 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 border border-border/30 hover:border-primary/50 transition-all duration-300 group"
                   >
                     <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
@@ -36,7 +36,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">Email</p>
-                      <p className="text-foreground font-medium">shahil.mangroliya@outlook.com</p>
+                      <p className="text-foreground font-medium">shahil.mangroliya123@gmail.com</p>
                     </div>
                   </a>
 
@@ -90,7 +90,7 @@ const Contact = () => {
                   className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-105 group"
                   asChild
                 >
-                  <a href="mailto:shahil.mangroliya@outlook.com" className="flex items-center gap-2">
+                  <a href="mailto:shahil.mangroliya123@gmail.com" className="flex items-center gap-2">
                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     Send an Email
                   </a>
