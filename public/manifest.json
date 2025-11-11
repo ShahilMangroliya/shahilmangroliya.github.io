@@ -1,0 +1,22 @@
+{
+  "name": "Shahil Mangroliya - Head of Engineering Portfolio",
+  "short_name": "Shahil Portfolio",
+  "description": "Portfolio website of Shahil Mangroliya - Head of Engineering at Pointz",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "engineering"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
+

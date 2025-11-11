@@ -55,22 +55,24 @@ const Contact = () => {
                 {/* Social Links */}
                 <div className="pt-6">
                   <h4 className="text-lg font-semibold text-foreground mb-4">Connect With Me</h4>
-                  <div className="flex gap-4">
+                  <div className="flex gap-4" role="list" aria-label="Social media links">
                     <a 
                       href="https://github.com/shahilmangroliya" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="p-3 rounded-lg bg-muted/30 hover:bg-muted/50 border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-110"
+                      aria-label="Visit Shahil Mangroliya's GitHub profile"
                     >
-                      <Github className="w-6 h-6 text-foreground" />
+                      <Github className="w-6 h-6 text-foreground" aria-hidden="true" />
                     </a>
                     <a 
-                      href="https://linkedin.com/in/shahilmangroliya" 
+                      href="https://www.linkedin.com/in/shahil-mangroliya" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="p-3 rounded-lg bg-muted/30 hover:bg-muted/50 border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-110"
+                      aria-label="Visit Shahil Mangroliya's LinkedIn profile"
                     >
-                      <Linkedin className="w-6 h-6 text-foreground" />
+                      <Linkedin className="w-6 h-6 text-foreground" aria-hidden="true" />
                     </a>
                   </div>
                 </div>

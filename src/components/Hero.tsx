@@ -57,28 +57,31 @@ const Hero = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-6 justify-center pt-8 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <div className="flex gap-6 justify-center pt-8 animate-fade-in" style={{ animationDelay: "0.6s" }} role="list" aria-label="Social media links">
             <a 
               href="https://github.com/shahilmangroliya" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border hover:border-primary hover:shadow-glow transition-all duration-300 hover:scale-110"
+              aria-label="Visit Shahil Mangroliya's GitHub profile"
             >
-              <Github className="w-6 h-6" />
+              <Github className="w-6 h-6" aria-hidden="true" />
             </a>
             <a 
-              href="https://linkedin.com/in/shahilmangroliya" 
+              href="https://www.linkedin.com/in/shahil-mangroliya" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border hover:border-primary hover:shadow-glow transition-all duration-300 hover:scale-110"
+              aria-label="Visit Shahil Mangroliya's LinkedIn profile"
             >
-              <Linkedin className="w-6 h-6" />
+              <Linkedin className="w-6 h-6" aria-hidden="true" />
             </a>
             <a 
-              href="mailto:shahil.mangroliya@outlook.com"
+              href="mailto:shahil.mangroliya123@gmail.com"
               className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border hover:border-primary hover:shadow-glow transition-all duration-300 hover:scale-110"
+              aria-label="Send email to Shahil Mangroliya"
             >
-              <Mail className="w-6 h-6" />
+              <Mail className="w-6 h-6" aria-hidden="true" />
             </a>
           </div>
         </div>

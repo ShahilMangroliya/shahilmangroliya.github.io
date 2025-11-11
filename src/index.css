@@ -70,13 +70,3 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 }
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}
