@@ -23,7 +23,7 @@ const Hero = () => {
 
           {/* Title */}
           <h2 className="text-2xl md:text-4xl font-semibold text-foreground/90 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Head of Engineering
+            Software Engineer
           </h2>
 
           {/* Location */}
