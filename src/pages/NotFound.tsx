@@ -28,7 +28,7 @@ const NotFound = () => {
           <span className="text-foreground">4</span>
         </h1>
 
-        <p className="font-serif-italic text-2xl text-foreground/85">
+        <p className="pull-quote text-2xl text-foreground/85 text-left max-w-md mx-auto">
           This page took a turn that wasn't on the route.
         </p>
 

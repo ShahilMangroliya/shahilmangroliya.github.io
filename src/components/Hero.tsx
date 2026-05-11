@@ -150,7 +150,10 @@ const Hero = () => {
         </div>
 
         {/* Stat strip */}
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/60 animate-fade-in" style={{ animationDelay: "0.55s" }}>
+        <div className="corner-frame relative mt-16 p-3 md:p-4 animate-fade-in" style={{ animationDelay: "0.55s" }}>
+          <span className="corner-frame__b1" aria-hidden />
+          <span className="corner-frame__b2" aria-hidden />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/60">
           {stats.map((s, i) => (
             <div
               key={s.label}
@@ -167,6 +170,7 @@ const Hero = () => {
               <Sparkles className="absolute right-4 top-4 h-3.5 w-3.5 text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           ))}
+          </div>
         </div>
 
         {/* Stack marquee */}

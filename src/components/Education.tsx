@@ -53,7 +53,7 @@ const Education = () => {
           <aside className="lg:col-span-4 rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm p-8 flex flex-col justify-between">
             <div className="space-y-3">
               <p className="label-mono">Continuous learning</p>
-              <p className="font-serif-italic text-2xl text-foreground/90 leading-snug">
+              <p className="pull-quote text-2xl text-foreground/90">
                 “Ship it. Then improve the ship.”
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">

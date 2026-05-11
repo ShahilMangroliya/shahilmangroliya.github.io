@@ -113,8 +113,10 @@ const Testimonials = () => {
         {testimonials.filter((t) => t.highlight).map((t) => (
           <figure
             key={t.author}
-            className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm p-8 md:p-12 mb-6 animate-fade-in"
+            className="corner-frame relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm p-8 md:p-12 mb-6 animate-fade-in"
           >
+            <span className="corner-frame__b1" aria-hidden />
+            <span className="corner-frame__b2" aria-hidden />
             <div className="absolute -top-32 -right-20 h-[360px] w-[360px] rounded-full bg-primary/15 blur-3xl" aria-hidden />
 
             <div className="relative grid lg:grid-cols-12 gap-8 items-start">

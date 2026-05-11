@@ -492,7 +492,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <p className="font-serif-italic text-xl md:text-2xl text-foreground/85 leading-snug">
+                  <p className="pull-quote text-xl md:text-2xl text-foreground/85">
                     {featured.tagline}
                   </p>
 
