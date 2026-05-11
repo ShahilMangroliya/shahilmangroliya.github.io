@@ -80,26 +80,26 @@ const Contact = () => {
 
               <div className="mt-8 grid sm:grid-cols-3 gap-3">
                 <a
-                  href="https://www.upwork.com/freelancers/~014ca1b42c6232598c"
+                  href="https://www.linkedin.com/in/shahil-mangroliya/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between rounded-xl border border-primary/40 bg-primary/10 px-4 py-3 transition-all hover:bg-primary/15"
                 >
                   <span className="flex items-center gap-2.5">
-                    <BadgeCheck className="h-[18px] w-[18px] text-primary" />
-                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-primary">Upwork</span>
+                    <Linkedin className="h-[18px] w-[18px] text-primary" />
+                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-primary">LinkedIn</span>
                   </span>
                   <ArrowUpRight className="h-4 w-4 text-primary transition-colors" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/shahil-mangroliya/"
+                  href="https://www.upwork.com/freelancers/~014ca1b42c6232598c"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-between rounded-xl border border-border/70 bg-card/40 px-4 py-3 transition-all hover:border-primary/60"
                 >
                   <span className="flex items-center gap-2.5">
-                    <Linkedin className="h-[18px] w-[18px] text-primary" />
-                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/85">LinkedIn</span>
+                    <BadgeCheck className="h-[18px] w-[18px] text-primary" />
+                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/85">Upwork</span>
                   </span>
                   <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>

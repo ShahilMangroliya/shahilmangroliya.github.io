@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 
 const homeLinks = [
-  { href: "#hire", label: "Hire me" },
+  { href: "#contact", label: "Hire me" },
   { href: "#work", label: "Work" },
   { href: "#testimonials", label: "Reviews" },
   { href: "#contact", label: "Contact" },
@@ -65,7 +65,7 @@ const Navigation = () => {
             ) : (
               homeLinks.map((link) => (
                 <a
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   className="group relative px-3 py-2 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/70 hover:text-foreground transition-colors"
                 >
@@ -103,7 +103,7 @@ const Navigation = () => {
               {!onProjects &&
                 homeLinks.map((link) => (
                   <a
-                    key={link.href}
+                    key={link.label}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className="rounded-md px-3 py-3 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/80 hover:bg-muted/50 hover:text-primary transition-colors"
