@@ -2,57 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Dark Cyberpunk Theme - Portfolio */
-    --background: 222 47% 5%;
-    --foreground: 180 100% 95%;
+    /* Warm-ink portfolio theme — bone, acid lime, signal amber */
+    --background: 30 10% 5%;
+    --foreground: 38 22% 92%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 180 100% 95%;
+    --card: 30 8% 8%;
+    --card-foreground: 38 22% 92%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 180 100% 95%;
+    --popover: 30 8% 8%;
+    --popover-foreground: 38 22% 92%;
 
-    --primary: 186 100% 50%;
-    --primary-foreground: 222 47% 5%;
-    --primary-glow: 186 100% 70%;
+    --primary: 75 88% 58%;
+    --primary-foreground: 30 14% 6%;
+    --primary-glow: 75 88% 70%;
 
-    --secondary: 270 70% 65%;
-    --secondary-foreground: 222 47% 5%;
-    --secondary-glow: 270 70% 80%;
+    --secondary: 24 92% 62%;
+    --secondary-foreground: 30 14% 6%;
+    --secondary-glow: 24 92% 75%;
 
-    --muted: 222 47% 12%;
-    --muted-foreground: 180 20% 65%;
+    --muted: 30 6% 14%;
+    --muted-foreground: 38 10% 62%;
 
-    --accent: 186 100% 50%;
-    --accent-foreground: 222 47% 5%;
+    --accent: 75 88% 58%;
+    --accent-foreground: 30 14% 6%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 38 22% 96%;
 
-    --border: 222 47% 15%;
-    --input: 222 47% 12%;
-    --ring: 186 100% 50%;
+    --border: 30 8% 17%;
+    --input: 30 8% 14%;
+    --ring: 75 88% 58%;
 
     --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(186 100% 50%), hsl(270 70% 65%));
-    --gradient-glow: linear-gradient(135deg, hsl(186 100% 70% / 0.3), hsl(270 70% 80% / 0.3));
-    --gradient-card: linear-gradient(135deg, hsl(222 47% 8% / 0.6), hsl(222 47% 12% / 0.6));
-    
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
-    --shadow-glow-secondary: 0 0 40px hsl(var(--secondary-glow) / 0.3);
-    --shadow-card: 0 10px 40px hsl(222 47% 3% / 0.6);
-    
-    /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient-primary: linear-gradient(135deg, hsl(75 88% 58%), hsl(24 92% 62%));
+    --gradient-glow: linear-gradient(135deg, hsl(75 88% 70% / 0.35), hsl(24 92% 75% / 0.35));
+    --gradient-card: linear-gradient(180deg, hsl(30 8% 9% / 0.85), hsl(30 8% 6% / 0.85));
+
+    --shadow-glow: 0 0 60px hsl(var(--primary-glow) / 0.28);
+    --shadow-glow-secondary: 0 0 60px hsl(var(--secondary-glow) / 0.28);
+    --shadow-card: 0 30px 80px hsl(30 30% 2% / 0.55);
+
+    --transition-smooth: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
@@ -61,12 +54,124 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  }
-
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(75 88% 30% / 0.10), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 100% 110%, hsl(24 92% 40% / 0.08), transparent 70%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.35);
+    color: hsl(var(--foreground));
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 999px;
+    border: 2px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Bricolage Grotesque', 'DM Serif Display', serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.04em;
+  }
+
+  .font-serif-italic {
+    font-family: 'Instrument Serif', 'Bricolage Grotesque', serif;
+    font-style: italic;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+    font-feature-settings: 'ss02', 'cv11';
+  }
+
+  .label-mono {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, hsl(var(--foreground) / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--foreground) / 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .noise {
+    position: relative;
+  }
+  .noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .marquee-track {
+    animation: marquee 38s linear infinite;
+  }
+
+  .reveal-line {
+    background: linear-gradient(120deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 50%, hsl(var(--foreground)) 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s ease-in-out infinite;
+  }
+
+  .hairline {
+    background: linear-gradient(to right, transparent, hsl(var(--foreground) / 0.25), transparent);
+  }
+
+  .tag-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-muted/40 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground/80 transition-all duration-300 hover:border-primary/60 hover:text-primary;
+  }
+
+  .dotted-line {
+    background-image: linear-gradient(to bottom, hsl(var(--border)) 50%, transparent 50%);
+    background-size: 1px 8px;
+    background-repeat: repeat-y;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes ticker {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
 }

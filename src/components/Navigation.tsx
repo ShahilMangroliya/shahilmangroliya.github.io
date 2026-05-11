@@ -1,55 +1,86 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
-const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#education", label: "Education" },
+const homeLinks = [
+  { href: "#hire", label: "Hire me" },
+  { href: "#work", label: "Work" },
+  { href: "#testimonials", label: "Reviews" },
   { href: "#contact", label: "Contact" },
-];
+] as const;
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const onProjects = location.pathname.startsWith("/projects");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 30);
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || isOpen
-          ? "bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-lg"
+          ? "bg-background/75 backdrop-blur-xl border-b border-border/60"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#home" className="text-xl md:text-2xl font-bold" aria-label="Shahil Mangroliya - Home">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">SM</span>
-          </a>
+          <Link
+            to="/"
+            className="group flex items-center gap-3"
+            aria-label="Shahil Mangroliya - Home"
+          >
+            <span className="relative inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-md border border-border bg-card text-foreground transition-colors group-hover:border-primary">
+              <span className="font-display text-base font-bold leading-none">S</span>
+              <span className="absolute inset-y-0 left-0 w-px bg-primary opacity-0 transition-opacity group-hover:opacity-100" />
+            </span>
+            <div className="hidden sm:flex flex-col leading-none">
+              <span className="font-display text-[15px] font-semibold tracking-tight text-foreground">
+                Shahil Mangroliya
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground mt-1">
+                Senior Engineer · Surat → ∞
+              </span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8" role="navigation" aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300 relative group"
-                aria-label={`Navigate to ${link.label} section`}
+          <div className="hidden md:flex items-center gap-1" role="navigation" aria-label="Main navigation">
+            {onProjects ? (
+              <Link
+                to="/"
+                className="group relative px-3 py-2 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/70 hover:text-foreground transition-colors"
               >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" aria-hidden="true" />
-              </a>
-            ))}
+                ← Index
+              </Link>
+            ) : (
+              homeLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="group relative px-3 py-2 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/70 hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                  <span className="absolute left-3 right-3 -bottom-px h-px scale-x-0 origin-left bg-primary transition-transform duration-300 group-hover:scale-x-100" />
+                </a>
+              ))
+            )}
+            <Link
+              to={onProjects ? "/" : "/projects"}
+              className="ml-3 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.16em] text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+            >
+              {onProjects ? "Back home" : "Projects"}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -61,25 +92,33 @@ const Navigation = () => {
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 animate-fade-in" role="navigation" aria-label="Mobile navigation menu">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-foreground/80 hover:text-primary transition-colors duration-300 py-2"
-                  onClick={() => setIsOpen(false)}
-                  aria-label={`Navigate to ${link.label} section`}
-                >
-                  {link.label}
-                </a>
-              ))}
+          <div className="md:hidden pb-6 pt-2 animate-fade-down" role="navigation" aria-label="Mobile navigation menu">
+            <div className="flex flex-col gap-1">
+              {!onProjects &&
+                homeLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="rounded-md px-3 py-3 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/80 hover:bg-muted/50 hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              <Link
+                to={onProjects ? "/" : "/projects"}
+                onClick={() => setIsOpen(false)}
+                className="mt-2 inline-flex items-center justify-between rounded-md border border-primary/40 bg-primary/10 px-3 py-3 font-mono text-[12px] uppercase tracking-[0.18em] text-primary"
+              >
+                {onProjects ? "Back home" : "View Projects"}
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         )}

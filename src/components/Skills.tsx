@@ -1,81 +1,114 @@
-import { Card } from "@/components/ui/card";
-import { Code2, Server, Shield, Cloud, Puzzle, Languages } from "lucide-react";
+import { Code2, Server, Shield, Cloud, Puzzle, Languages, Sparkles } from "lucide-react";
 
-const skillCategories = [
+type Category = {
+  icon: typeof Code2;
+  title: string;
+  caption: string;
+  skills: string[];
+};
+
+const categories: Category[] = [
   {
     icon: Code2,
     title: "Frontend",
-    skills: ["React Native", "React", "Next.js", "Redux", "TypeScript", "JavaScript", "Android Studio", "Xcode", "RESTful APIs"]
+    caption: "App + web surface",
+    skills: ["React Native", "React", "Next.js", "Redux", "TypeScript", "JavaScript", "Android Studio", "Xcode", "RESTful APIs"],
   },
   {
     icon: Server,
-    title: "Backend",
-    skills: ["Node.js", "Python", "Spring Boot", "Firebase", "PostgreSQL", "MongoDB", "SQL"]
+    title: "Backend & Data",
+    caption: "Services and persistence",
+    skills: ["Node.js", "Python", "Spring Boot", "Firebase", "PostgreSQL", "MongoDB", "SQL", "Turbo"],
+  },
+  {
+    icon: Sparkles,
+    title: "AI Tooling",
+    caption: "How I move 2× faster",
+    skills: ["Claude Code", "Cursor", "Claude Code skills + subagents", "Workflow design"],
   },
   {
     icon: Shield,
     title: "Security",
-    skills: ["Auth/Session Tokens", "PKCE", "SSL Pinning", "Encryption", "Nonce Validation"]
+    caption: "Baseline for everything I ship",
+    skills: ["Auth / Session tokens", "PKCE", "SSL Pinning", "Encryption", "Nonce Validation"],
   },
   {
     icon: Cloud,
     title: "Cloud & DevOps",
-    skills: ["AWS (EC2, RDS, S3)", "CI/CD", "Docker"]
+    caption: "Cheap, observable, deployable",
+    skills: ["AWS (EC2, RDS, S3)", "Google Cloud", "CI/CD", "Docker"],
   },
   {
     icon: Puzzle,
     title: "Integrations",
-    skills: ["Payment Gateways (Stripe, RevenueCat, Razorpay, Braintree)", "In-App Purchases", "Location Services (Google Maps, Mapbox, GPS, OSM)"]
+    caption: "Payments & location",
+    skills: ["Stripe", "RevenueCat", "Razorpay", "Braintree", "In-App Purchases", "Google Maps", "Mapbox", "GPS", "OSM"],
   },
   {
     icon: Languages,
     title: "Languages",
-    skills: ["English - Fluent", "Hindi - Fluent", "Gujarati - Native"]
-  }
+    caption: "Spoken, not compiled",
+    skills: ["English — Fluent", "Hindi — Fluent", "Gujarati — Native"],
+  },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(168,85,247,0.05),transparent_50%)]" />
-      
-      <div className="container relative z-10 mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Technical Skills</span>
-          </h2>
-          <div className="h-1 w-24 bg-gradient-primary mx-auto rounded-full" />
+    <section id="skills" className="relative py-28 md:py-36 overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-px hairline" aria-hidden />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,hsl(24_92%_40%/0.07),transparent_60%)]" aria-hidden />
+
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
+        <div className="grid lg:grid-cols-12 gap-8 items-end mb-14">
+          <div className="lg:col-span-7">
+            <p className="label-mono mb-4">§ 02 — The stack I reach for</p>
+            <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
+              Pragmatic, <span className="font-serif-italic font-normal text-primary">secure</span>,
+              <br />
+              shippable.
+            </h2>
+          </div>
+          <div className="lg:col-span-5 lg:pl-6 lg:border-l lg:border-border/60">
+            <p className="text-foreground/75 leading-relaxed">
+              I optimise for tools that let one engineer carry a product end-to-end. Anything below has shipped in production — most of it under my ownership today.
+            </p>
+          </div>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, idx) => (
-            <Card 
-              key={idx}
-              className="p-6 bg-gradient-card backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow-secondary group animate-fade-in"
-              style={{ animationDelay: `${idx * 0.1}s` }}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-4">
+          {categories.map((c, idx) => (
+            <article
+              key={c.title}
+              className="group relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm p-6 md:p-7 transition-all duration-500 hover:border-primary/40 hover:shadow-card animate-fade-in"
+              style={{ animationDelay: `${idx * 0.05}s` }}
             >
-              <div className="space-y-4">
-                {/* Icon and Title */}
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-lg bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
-                    <category.icon className="w-6 h-6 text-secondary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
-                </div>
-
-                {/* Skills List */}
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIdx) => (
-                    <span 
-                      key={skillIdx}
-                      className="px-3 py-1.5 text-sm bg-muted/50 border border-border/50 rounded-full text-foreground/80 hover:border-primary/50 hover:text-primary transition-all duration-300 cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden>
+                <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-primary/10 blur-2xl" />
               </div>
-            </Card>
+
+              <div className="relative flex items-start justify-between mb-5">
+                <div className="flex items-center gap-3">
+                  <div className="grid place-items-center h-10 w-10 rounded-xl border border-border/80 bg-card/70 text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-500">
+                    <c.icon className="h-[18px] w-[18px]" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl font-semibold tracking-tight leading-tight">{c.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-tight">{c.caption}</p>
+                  </div>
+                </div>
+                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+              </div>
+
+              <div className="relative flex flex-wrap gap-1.5">
+                {c.skills.map((s) => (
+                  <span key={s} className="tag-chip">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </div>

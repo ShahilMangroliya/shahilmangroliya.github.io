@@ -1,113 +1,161 @@
-import { Mail, Github, Linkedin, MapPin, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Mail, Github, Linkedin, MapPin, Send, ArrowUpRight, Copy, BadgeCheck } from "lucide-react";
+import { toast } from "sonner";
+
+const EMAIL = "shahil.mangroliya@outlook.com";
 
 const Contact = () => {
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      toast.success("Email copied to clipboard", {
+        description: EMAIL,
+      });
+    } catch {
+      toast.error("Couldn't copy — try selecting it instead");
+    }
+  };
+
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.05),transparent_50%)]" />
-      
-      <div className="container relative z-10 mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Get In Touch</span>
-          </h2>
-          <div className="h-1 w-24 bg-gradient-primary mx-auto rounded-full" />
-          <p className="text-foreground/70 mt-6 max-w-2xl mx-auto">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-          </p>
+    <section id="contact" className="relative py-28 md:py-36 overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-px hairline" aria-hidden />
+      <div className="absolute inset-0 grid-bg opacity-25 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_30%,transparent_80%)]" aria-hidden />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[420px] w-[820px] rounded-full bg-primary/10 blur-[160px]" aria-hidden />
+
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
+        <div className="grid lg:grid-cols-12 gap-8 items-end mb-14">
+          <div className="lg:col-span-7">
+            <p className="label-mono mb-4">§ 04 — Open a thread</p>
+            <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
+              Let's build <span className="font-serif-italic font-normal text-primary">something</span>
+              <br />
+              worth shipping.
+            </h2>
+          </div>
+          <div className="lg:col-span-5 lg:pl-6 lg:border-l lg:border-border/60">
+            <p className="text-foreground/75 leading-relaxed">
+              I'm happiest as a single engineer owning a hard product end-to-end. If that sounds like what you're after — or you just want to talk shop —
+              <span className="text-primary"> drop a line.</span>
+            </p>
+          </div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12 bg-gradient-card backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow animate-fade-in">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Contact Info */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
-                
-                <div className="space-y-4">
-                  {/* Email */}
-                  <a 
-                    href="mailto:shahil.mangroliya123@gmail.com"
-                    className="flex items-start gap-4 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 border border-border/30 hover:border-primary/50 transition-all duration-300 group"
+        <div className="grid lg:grid-cols-12 gap-6">
+          {/* Email card — primary CTA */}
+          <div className="lg:col-span-7 rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm p-8 md:p-10 relative overflow-hidden">
+            <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full bg-primary/10 blur-3xl" aria-hidden />
+            <div className="relative">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="inline-flex h-2 w-2 rounded-full bg-primary animate-glow-pulse" />
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-foreground/70">
+                  $ ./contact — responding within 24h
+                </p>
+              </div>
+
+              <h3 className="font-display text-3xl md:text-4xl font-bold tracking-[-0.03em] mb-3">
+                The fastest path is <span className="font-serif-italic font-normal text-primary">email</span>.
+              </h3>
+
+              <div className="mt-6 rounded-xl border border-border/70 bg-background/60 backdrop-blur p-4 md:p-5 flex flex-wrap items-center justify-between gap-3">
+                <code className="font-mono text-base md:text-lg text-foreground/90 break-all">
+                  {EMAIL}
+                </code>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={copyEmail}
+                    className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/40 px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/80 transition-all hover:border-primary/60 hover:text-primary"
                   >
-                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <Mail className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground mb-1">Email</p>
-                      <p className="text-foreground font-medium">shahil.mangroliya123@gmail.com</p>
-                    </div>
+                    <Copy className="h-3.5 w-3.5" />
+                    Copy
+                  </button>
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="inline-flex items-center gap-2 rounded-full bg-primary px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-primary-foreground transition-all hover:shadow-glow"
+                  >
+                    <Send className="h-3.5 w-3.5" />
+                    Compose
                   </a>
-
-                  {/* Location */}
-                  <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30 border border-border/30">
-                    <div className="p-2 rounded-lg bg-secondary/10">
-                      <MapPin className="w-5 h-5 text-secondary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground mb-1">Location</p>
-                      <p className="text-foreground font-medium">Surat, Gujarat, India</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Social Links */}
-                <div className="pt-6">
-                  <h4 className="text-lg font-semibold text-foreground mb-4">Connect With Me</h4>
-                  <div className="flex gap-4" role="list" aria-label="Social media links">
-                    <a 
-                      href="https://github.com/shahilmangroliya" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-lg bg-muted/30 hover:bg-muted/50 border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-110"
-                      aria-label="Visit Shahil Mangroliya's GitHub profile"
-                    >
-                      <Github className="w-6 h-6 text-foreground" aria-hidden="true" />
-                    </a>
-                    <a 
-                      href="https://www.linkedin.com/in/shahil-mangroliya" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-lg bg-muted/30 hover:bg-muted/50 border border-border/30 hover:border-primary/50 transition-all duration-300 hover:scale-110"
-                      aria-label="Visit Shahil Mangroliya's LinkedIn profile"
-                    >
-                      <Linkedin className="w-6 h-6 text-foreground" aria-hidden="true" />
-                    </a>
-                  </div>
                 </div>
               </div>
 
-              {/* CTA */}
-              <div className="flex flex-col justify-center space-y-6">
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-foreground">Let's Work Together</h3>
-                  <p className="text-foreground/70 leading-relaxed">
-                    Whether you have a project in mind, need a technical consultant, or just want to connect, I'd love to hear from you.
-                  </p>
-                </div>
-
-                <Button 
-                  size="lg"
-                  className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-105 group"
-                  asChild
+              <div className="mt-8 grid sm:grid-cols-3 gap-3">
+                <a
+                  href="https://www.upwork.com/freelancers/~014ca1b42c6232598c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between rounded-xl border border-primary/40 bg-primary/10 px-4 py-3 transition-all hover:bg-primary/15"
                 >
-                  <a href="mailto:shahil.mangroliya123@gmail.com" className="flex items-center gap-2">
-                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    Send an Email
-                  </a>
-                </Button>
-
-                {/* Decorative Element */}
-                <div className="pt-8">
-                  <div className="relative h-32 rounded-lg overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-primary opacity-20" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]" />
-                  </div>
-                </div>
+                  <span className="flex items-center gap-2.5">
+                    <BadgeCheck className="h-[18px] w-[18px] text-primary" />
+                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-primary">Upwork</span>
+                  </span>
+                  <ArrowUpRight className="h-4 w-4 text-primary transition-colors" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/shahil-mangroliya/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between rounded-xl border border-border/70 bg-card/40 px-4 py-3 transition-all hover:border-primary/60"
+                >
+                  <span className="flex items-center gap-2.5">
+                    <Linkedin className="h-[18px] w-[18px] text-primary" />
+                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/85">LinkedIn</span>
+                  </span>
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </a>
+                <a
+                  href="https://github.com/ShahilMangroliya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between rounded-xl border border-border/70 bg-card/40 px-4 py-3 transition-all hover:border-primary/60"
+                >
+                  <span className="flex items-center gap-2.5">
+                    <Github className="h-[18px] w-[18px] text-primary" />
+                    <span className="font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/85">GitHub</span>
+                  </span>
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </a>
               </div>
             </div>
-          </Card>
+          </div>
+
+          {/* Side details */}
+          <aside className="lg:col-span-5 grid grid-rows-2 gap-6">
+            <div className="rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm p-7 flex flex-col justify-between">
+              <div className="space-y-3">
+                <p className="label-mono">Based in</p>
+                <div className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <h4 className="font-display text-2xl font-semibold tracking-tight">Surat, Gujarat · India</h4>
+                </div>
+                <p className="text-base text-foreground/80 leading-relaxed">
+                  GMT+05:30. Comfortable working across US, EU, and APAC timezones.
+                </p>
+              </div>
+              <div className="pt-6 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                <span className="inline-flex h-2 w-2 rounded-full bg-primary animate-glow-pulse" />
+                Available
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm p-7">
+              <p className="label-mono mb-4">Good fits</p>
+              <ul className="space-y-2 text-foreground/80">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                  <span>Founding / sole engineer owning a product end-to-end.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                  <span>Mobile-heavy products with backend, security &amp; cloud complexity.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                  <span>Hard problems where AI-augmented workflows compound output.</span>
+                </li>
+              </ul>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
