@@ -31,7 +31,7 @@ const Education = () => {
               <div className="flex-1 space-y-3">
                 <p className="label-mono">Bachelor of Engineering</p>
                 <h3 className="font-display text-3xl md:text-4xl font-bold tracking-[-0.03em] leading-tight">
-                  Gujarat <span className="font-serif-italic font-normal text-primary">Technological</span> University
+                  Gujarat Technological University
                 </h3>
                 <p className="text-foreground/80 leading-relaxed">
                   Computer Engineering — focus on systems, data structures, and software design. Capstone work in mobile + cloud-connected products.

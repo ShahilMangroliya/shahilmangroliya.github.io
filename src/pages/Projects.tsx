@@ -67,7 +67,7 @@ const featured: Project = {
   blurb:
     "Pointz is a community-powered navigation app for cyclists. I've owned its stack across three roles — frontend → full-stack → Head of Engineering — re-architecting the navigation core, designing the security baseline, hardening the API tier, and slashing infrastructure spend.",
   role: "Former Head of Engineering · now on ad-hoc maintenance retainer",
-  status: "Shipping",
+  status: "Shipped",
   year: "2022 → now",
   stack: [
     "React Native", "Java Spring Boot", "PostgreSQL", "AWS (EC2, RDS, S3)",

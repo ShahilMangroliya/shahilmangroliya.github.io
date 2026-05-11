@@ -15,171 +15,59 @@ type Props = {
 
 const baseClass = "relative w-full overflow-hidden rounded-2xl border border-border/60 bg-background/60";
 
+const IconCanvas = ({
+  src,
+  alt,
+  background,
+  padding = "p-6 md:p-8",
+}: {
+  src: string;
+  alt: string;
+  background: string;
+  padding?: string;
+}) => (
+  <div className="absolute inset-0" style={{ background }}>
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      className={`absolute inset-0 h-full w-full object-contain ${padding} drop-shadow-[0_18px_40px_rgba(0,0,0,0.35)]`}
+    />
+  </div>
+);
+
 const Pointz = () => (
-  <svg viewBox="0 0 400 220" className="absolute inset-0 h-full w-full">
-    <defs>
-      <linearGradient id="pz-grad" x1="0" x2="1">
-        <stop offset="0" stopColor="hsl(75 88% 58%)" />
-        <stop offset="1" stopColor="hsl(24 92% 62%)" />
-      </linearGradient>
-      <radialGradient id="pz-glow" cx="50%" cy="50%" r="50%">
-        <stop offset="0" stopColor="hsl(75 88% 60% / 0.45)" />
-        <stop offset="1" stopColor="hsl(75 88% 60% / 0)" />
-      </radialGradient>
-      <pattern id="pz-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="hsl(38 22% 92% / 0.05)" strokeWidth="1" />
-      </pattern>
-    </defs>
-    <rect width="400" height="220" fill="url(#pz-grid)" />
-    <circle cx="120" cy="110" r="120" fill="url(#pz-glow)" opacity="0.5" />
-    {/* roads */}
-    <path d="M 20 180 Q 90 160 130 130 T 240 90 T 380 60" stroke="hsl(38 22% 92% / 0.12)" strokeWidth="14" fill="none" strokeLinecap="round" />
-    <path d="M 20 180 Q 90 160 130 130 T 240 90 T 380 60" stroke="url(#pz-grad)" strokeWidth="3" fill="none" strokeLinecap="round" strokeDasharray="6 4" />
-    <path d="M 30 40 Q 100 70 150 60 T 280 95 T 380 130" stroke="hsl(38 22% 92% / 0.08)" strokeWidth="10" fill="none" strokeLinecap="round" />
-    <path d="M 30 40 Q 100 70 150 60 T 280 95 T 380 130" stroke="hsl(75 88% 58% / 0.4)" strokeWidth="2" fill="none" strokeLinecap="round" />
-    {/* pins */}
-    <g>
-      <circle cx="130" cy="130" r="10" fill="hsl(75 88% 58%)" />
-      <circle cx="130" cy="130" r="18" fill="hsl(75 88% 58% / 0.2)" />
-      <circle cx="130" cy="130" r="3" fill="hsl(30 10% 5%)" />
-    </g>
-    <g>
-      <circle cx="280" cy="90" r="7" fill="hsl(24 92% 62%)" />
-      <circle cx="280" cy="90" r="14" fill="hsl(24 92% 62% / 0.2)" />
-    </g>
-    {/* bike marker */}
-    <g transform="translate(48,170)">
-      <circle r="6" fill="hsl(75 88% 58%)">
-        <animate attributeName="r" values="6;9;6" dur="2.4s" repeatCount="indefinite" />
-      </circle>
-      <circle r="14" fill="hsl(75 88% 58% / 0)" stroke="hsl(75 88% 58% / 0.6)" strokeWidth="1.5">
-        <animate attributeName="r" values="6;28;6" dur="2.4s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite" />
-      </circle>
-    </g>
-  </svg>
+  <IconCanvas
+    src="/screenshots/pointz-icon.webp"
+    alt="Pointz app icon"
+    background="rgb(2, 73, 182)"
+  />
 );
 
 const MoodMe = () => (
-  <svg viewBox="0 0 400 220" className="absolute inset-0 h-full w-full">
-    <defs>
-      <linearGradient id="mm-grad" x1="0" x2="1">
-        <stop offset="0" stopColor="hsl(24 92% 62%)" />
-        <stop offset="1" stopColor="hsl(340 90% 60%)" />
-      </linearGradient>
-    </defs>
-    <rect width="400" height="220" fill="hsl(30 8% 8%)" />
-    {/* heart */}
-    <g transform="translate(200,110)">
-      <path
-        d="M 0 30 C -50 0 -60 -40 -30 -50 C -10 -55 0 -40 0 -25 C 0 -40 10 -55 30 -50 C 60 -40 50 0 0 30 Z"
-        fill="url(#mm-grad)"
-        opacity="0.9"
-      />
-      <path
-        d="M 0 30 C -50 0 -60 -40 -30 -50 C -10 -55 0 -40 0 -25 C 0 -40 10 -55 30 -50 C 60 -40 50 0 0 30 Z"
-        fill="none"
-        stroke="hsl(38 22% 92% / 0.3)"
-        strokeWidth="1"
-      />
-    </g>
-    {/* waveform */}
-    <path
-      d="M 20 110 L 60 110 L 75 80 L 95 140 L 115 60 L 135 160 L 155 90 L 175 110 L 380 110"
-      stroke="hsl(24 92% 62%)"
-      strokeWidth="2"
-      fill="none"
-      strokeLinecap="round"
-      opacity="0.7"
-    />
-    <path
-      d="M 20 110 L 60 110 L 75 80 L 95 140 L 115 60 L 135 160 L 155 90 L 175 110 L 380 110"
-      stroke="hsl(24 92% 62%)"
-      strokeWidth="0.5"
-      fill="none"
-      strokeLinecap="round"
-      strokeDasharray="2 4"
-    />
-    {/* tiny dots */}
-    {[40, 80, 120, 160, 240, 290, 340].map((x, i) => (
-      <circle key={i} cx={x} cy={110} r="1.5" fill="hsl(38 22% 92% / 0.5)" />
-    ))}
-  </svg>
-);
-
-const TraceBust = () => (
-  <svg viewBox="0 0 400 220" className="absolute inset-0 h-full w-full">
-    <defs>
-      <linearGradient id="tb-split" x1="0" x2="1">
-        <stop offset="0.5" stopColor="hsl(30 10% 5%)" />
-        <stop offset="0.5" stopColor="hsl(38 22% 92%)" />
-      </linearGradient>
-    </defs>
-    <rect width="400" height="220" fill="url(#tb-split)" />
-    {/* split horizon */}
-    <line x1="200" y1="0" x2="200" y2="220" stroke="hsl(75 88% 58%)" strokeWidth="1.5" />
-    {/* dark side magnifier */}
-    <g transform="translate(110,110)">
-      <circle r="40" fill="none" stroke="hsl(75 88% 58%)" strokeWidth="2.5" />
-      <line x1="28" y1="28" x2="55" y2="55" stroke="hsl(75 88% 58%)" strokeWidth="3" strokeLinecap="round" />
-      <circle r="40" fill="hsl(75 88% 58% / 0.05)" />
-    </g>
-    {/* light side magnifier */}
-    <g transform="translate(290,110)">
-      <circle r="40" fill="none" stroke="hsl(30 10% 5%)" strokeWidth="2.5" />
-      <line x1="28" y1="28" x2="55" y2="55" stroke="hsl(30 10% 5%)" strokeWidth="3" strokeLinecap="round" />
-      <circle r="40" fill="hsl(30 10% 10% / 0.06)" />
-    </g>
-    {/* sun/moon */}
-    <circle cx="50" cy="50" r="14" fill="hsl(75 88% 58%)" opacity="0.7" />
-    <circle cx="350" cy="50" r="14" fill="hsl(30 10% 5%)" opacity="0.7" />
-  </svg>
+  <IconCanvas
+    src="/screenshots/moodme-icon.webp"
+    alt="MoodMe app icon"
+    background="#ffffff"
+  />
 );
 
 const PrankCaller = () => (
-  <svg viewBox="0 0 400 220" className="absolute inset-0 h-full w-full">
-    <rect width="400" height="220" fill="hsl(30 8% 8%)" />
-    {/* dial pad */}
-    {Array.from({ length: 12 }).map((_, i) => {
-      const col = i % 3;
-      const row = Math.floor(i / 3);
-      const x = 130 + col * 50;
-      const y = 30 + row * 45;
-      return (
-        <g key={i}>
-          <circle cx={x} cy={y} r={18} fill="none" stroke="hsl(38 22% 92% / 0.2)" strokeWidth="1" />
-          <circle cx={x} cy={y} r={3} fill="hsl(75 88% 58% / 0.7)" />
-        </g>
-      );
-    })}
-    {/* call wave bands */}
-    <g transform="translate(40,110)">
-      {[6, 14, 22, 30, 38].map((r, i) => (
-        <path
-          key={r}
-          d={`M 0 -${r} A ${r} ${r} 0 0 1 0 ${r}`}
-          fill="none"
-          stroke="hsl(24 92% 62%)"
-          strokeWidth="2"
-          opacity={1 - i * 0.18}
-          strokeLinecap="round"
-        />
-      ))}
-    </g>
-    <g transform="translate(360,110)">
-      {[6, 14, 22, 30, 38].map((r, i) => (
-        <path
-          key={r}
-          d={`M 0 -${r} A ${r} ${r} 0 0 0 0 ${r}`}
-          fill="none"
-          stroke="hsl(75 88% 58%)"
-          strokeWidth="2"
-          opacity={1 - i * 0.18}
-          strokeLinecap="round"
-        />
-      ))}
-    </g>
-  </svg>
+  <IconCanvas
+    src="/screenshots/prank-caller-icon.webp"
+    alt="Prank Caller app icon"
+    background="rgb(146, 215, 244)"
+  />
+);
+
+const TraceBust = () => (
+  <IconCanvas
+    src="/screenshots/trace-bust.png"
+    alt="Trace Bust / FakeCallerID logo"
+    background="rgb(24, 118, 254)"
+    padding="p-10 md:p-14"
+  />
 );
 
 const Stormglass = () => (
