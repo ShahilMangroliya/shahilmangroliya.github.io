@@ -1,7 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Major search + social crawlers (explicit, in case wildcard is throttled)
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
 Allow: /
 
 User-agent: Twitterbot
@@ -10,8 +21,13 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
 
-# Sitemap
+User-agent: Slackbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 Sitemap: https://shahilmangroliya.github.io/sitemap.xml

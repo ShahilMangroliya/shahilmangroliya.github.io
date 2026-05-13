@@ -1,11 +1,11 @@
 {
-  "name": "Shahil Mangroliya - Head of Engineering Portfolio",
-  "short_name": "Shahil Portfolio",
-  "description": "Portfolio website of Shahil Mangroliya - Head of Engineering at Pointz",
+  "name": "Shahil Mangroliya — Fractional CTO & AI MVP Engineer",
+  "short_name": "Shahil Mangroliya",
+  "description": "Fractional CTO and founding engineer. Ships AI-native MVPs in 4–6 weeks and rescues stalled React Native builds. Ex Head of Engineering at Pointz. Top Rated Plus on Upwork.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0f",
-  "theme_color": "#0a0a0f",
+  "background_color": "#0d0c0a",
+  "theme_color": "#0d0c0a",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -15,8 +15,7 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["portfolio", "developer", "engineering"],
+  "categories": ["business", "productivity", "portfolio", "developer", "engineering"],
   "lang": "en-US",
   "dir": "ltr"
 }
-

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { usePageMeta } from "@/hooks/use-page-meta";
 import {
   ArrowUpRight,
   ArrowLeft,
@@ -401,6 +402,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 const Projects = () => {
+  usePageMeta({
+    title: "Selected Projects · Shahil Mangroliya — AI MVP & React Native Builds",
+    description:
+      "Seven builds by Shahil Mangroliya — Pointz (Head of Engineering), an AI-native MVP shipped as founding engineer, and five client/studio apps. React Native, Spring Boot, AWS, Claude Code.",
+    canonical: "https://shahilmangroliya.github.io/projects",
+  });
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);

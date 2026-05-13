@@ -9,9 +9,17 @@ import Testimonials from "@/components/Testimonials";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const Index = () => {
   const location = useLocation();
+
+  usePageMeta({
+    title: "Shahil Mangroliya · Fractional CTO & AI MVP Engineer for Founders",
+    description:
+      "Fractional CTO and founding engineer. I help founders ship AI-native MVPs in 4–6 weeks and rescue stalled React Native builds. Ex Head of Engineering at Pointz. Top Rated Plus on Upwork.",
+    canonical: "https://shahilmangroliya.github.io/",
+  });
 
   useEffect(() => {
     if (location.hash) {

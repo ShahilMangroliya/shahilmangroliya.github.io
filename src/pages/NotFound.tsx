@@ -1,9 +1,15 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Compass } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const NotFound = () => {
   const location = useLocation();
+
+  usePageMeta({
+    title: "Page not found · Shahil Mangroliya",
+    description: "This page isn't part of the portfolio. Head back to the index for Shahil Mangroliya's work.",
+  });
 
   useEffect(() => {
     console.error("404 — non-existent route:", location.pathname);
