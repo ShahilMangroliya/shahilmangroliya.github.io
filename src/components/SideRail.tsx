@@ -28,12 +28,20 @@ const SideRail = () => {
   const isHome = location.pathname === "/";
   const sections = useMemo<SectionDef[]>(() => (isHome ? HOME_SECTIONS : []), [isHome]);
   const [active, setActive] = useState<string>(sections[0]?.id ?? "");
-  const [time, setTime] = useState<string>(formatSuratTime());
+  // Start blank to avoid SSR/CSR hydration mismatch; populate after mount.
+  const [time, setTime] = useState<string>("");
 
-  // Live clock — tick every 15s
+  // Live clock — tick every 15s. First update is scheduled via rAF so the
+  // setState lands after the render that consumed the SSR markup, avoiding
+  // hydration mismatch on the initial paint.
   useEffect(() => {
-    const t = window.setInterval(() => setTime(formatSuratTime()), 15_000);
-    return () => window.clearInterval(t);
+    const update = () => setTime(formatSuratTime());
+    const raf = requestAnimationFrame(update);
+    const t = window.setInterval(update, 15_000);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearInterval(t);
+    };
   }, []);
 
   // Scroll spy — find which section is in view
