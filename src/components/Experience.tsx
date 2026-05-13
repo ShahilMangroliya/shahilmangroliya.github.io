@@ -114,7 +114,7 @@ const Experience = () => {
           <div className="lg:col-span-7">
             <p className="label-mono mb-4">§ 01 — Work history</p>
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
-              Five years of <span className="font-serif-italic font-normal text-primary">shipping</span>,
+              Five years of <span className="text-primary">shipping</span>,
               <br />
               owning, refactoring.
             </h2>

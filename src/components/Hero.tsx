@@ -75,10 +75,7 @@ const Hero = () => {
             </h1>
 
             <p className="max-w-2xl text-lg md:text-2xl leading-snug text-foreground/85 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <span className="text-foreground">Senior Software Engineer</span>{" "}
-              <span className="text-muted-foreground">·</span>{" "}
-              <span className="text-primary">ex Head of Engineering</span>{" "}
-              building secure, scalable systems across mobile, backend, and cloud. Currently building an AI-native stealth startup; previously owned <span className="underline decoration-primary/60 underline-offset-4">Pointz</span>, the safer-bike-mapping platform, end-to-end.
+              I help founders ship <span className="text-primary">AI-native MVPs</span> and rescue stalled <span className="text-foreground">React Native</span> builds — solo, or as fractional CTO. Top Rated Plus on Upwork; previously <span className="text-foreground">Head of Engineering</span> at <span className="underline decoration-primary/60 underline-offset-4">Pointz</span>, the safer-bike-mapping platform.
             </p>
           </div>
 
@@ -96,7 +93,7 @@ const Hero = () => {
             <div className="space-y-1.5">
               <p className="label-mono">Now</p>
               <p className="text-sm text-foreground/85 leading-relaxed">
-                Building an AI-native stealth startup full-time — Claude Code, custom skills, subagent workflows. Pointz on retainer for ad-hoc fixes and maintenance.
+                Booking <span className="text-primary">1 retainer slot</span> + short MVP sprints. Currently building a stealth AI product full-time and on retainer with Pointz.
               </p>
             </div>
           </aside>

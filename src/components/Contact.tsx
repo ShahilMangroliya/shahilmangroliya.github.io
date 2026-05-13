@@ -26,7 +26,7 @@ const Contact = () => {
           <div className="lg:col-span-7">
             <p className="label-mono mb-4">§ 04 — Open a thread</p>
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
-              Let's build <span className="font-serif-italic font-normal text-primary">something</span>
+              Let's build <span className="text-primary">something</span>
               <br />
               worth shipping.
             </h2>
@@ -52,7 +52,7 @@ const Contact = () => {
               </div>
 
               <h3 className="font-display text-3xl md:text-4xl font-bold tracking-[-0.03em] mb-3">
-                The fastest path is <span className="font-serif-italic font-normal text-primary">email</span>.
+                The fastest path is <span className="text-primary">email</span>.
               </h3>
 
               <div className="mt-6 rounded-xl border border-border/70 bg-background/60 backdrop-blur p-4 md:p-5 flex flex-wrap items-center justify-between gap-3">
@@ -143,15 +143,19 @@ const Contact = () => {
               <ul className="space-y-2 text-foreground/80">
                 <li className="flex items-start gap-3">
                   <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                  <span>Founding / sole engineer owning a product end-to-end.</span>
+                  <span>Founders shipping an <span className="text-foreground">AI-native MVP</span> in 4–6 weeks.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                  <span>Mobile-heavy products with backend, security &amp; cloud complexity.</span>
+                  <span><span className="text-foreground">Fractional CTO</span> retainer — one founder, full ownership.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                  <span>Hard problems where AI-augmented workflows compound output.</span>
+                  <span>Stalled <span className="text-foreground">React Native</span> or backend codebases that need a rescue.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                  <span>Pre-scale <span className="text-foreground">security &amp; cloud audits</span> — 2-week fixed scope.</span>
                 </li>
               </ul>
             </div>

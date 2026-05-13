@@ -2,32 +2,32 @@ import { Rocket, Wrench, ShieldCheck, Sparkles, ArrowUpRight } from "lucide-reac
 
 const services = [
   {
+    icon: Sparkles,
+    eyebrow: "4–6 week sprint · fixed scope",
+    title: "Ship your AI-native MVP",
+    body: "From Figma or napkin to a real product in users' hands — RN + Node + LLM/agent layer, auth, payments, the works. Built the way I ship my own stealth AI startup, not the way an agency ships yours.",
+    proof: "Daily driver: Claude Code, subagents, custom skill stacks.",
+  },
+  {
     icon: Rocket,
-    eyebrow: "Best fit",
-    title: "Founding / sole engineer",
-    body: "Own the product end-to-end — mobile, backend, infra, security, payments. The role I held at Pointz for two years, and the model I'm running on my own stealth startup right now.",
-    proof: "Pointz: 1 engineer, 3 roles, 65% AWS cost cut.",
+    eyebrow: "Retainer · fractional CTO",
+    title: "Sole engineer for one founder",
+    body: "Own the product end-to-end — mobile, backend, infra, security, payments — while you raise, sell, hire. Same model I ran as Head of Engineering at Pointz, now offered to one founder at a time.",
+    proof: "At Pointz: 1 engineer, 3 roles, 65% AWS cost cut.",
   },
   {
     icon: Wrench,
-    eyebrow: "Quickest win",
-    title: "Rescue a stalled mobile build",
-    body: "Inherit a half-finished React Native or Spring Boot codebase, stabilise it, and ship the next milestone in weeks — not quarters.",
-    proof: "Took over Stormglass & MoodMe codebases without a ramp.",
+    eyebrow: "4–8 weeks · take-over",
+    title: "Rescue a stalled React Native build",
+    body: "Inherit a half-finished RN or Spring Boot codebase, stabilise it, and ship the next milestone in weeks — not quarters. No ramp-up tax.",
+    proof: "Took over Stormglass & MoodMe codebases cold and shipped.",
   },
   {
     icon: ShieldCheck,
-    eyebrow: "Pre-launch",
-    title: "Secure & optimise before scale",
-    body: "PKCE, SSL pinning, encryption, nonce validation — plus AWS right-sizing and API performance work — before you go viral, not after.",
-    proof: "Same security baseline now protects every Pointz user.",
-  },
-  {
-    icon: Sparkles,
-    eyebrow: "Force-multiplier",
-    title: "AI-augmented engineering",
-    body: "Claude Code skills + subagent workflows that compress engineering cycles. Useful for solo founders or to lift an existing team's output.",
-    proof: "Powering the engineering loop of my own stealth AI product.",
+    eyebrow: "2-week audit · fixed price",
+    title: "Pre-scale security & cloud audit",
+    body: "PKCE, SSL pinning, encryption, nonce validation, AWS right-sizing, API hot paths. Done before you go viral or close a round — not after the first incident report.",
+    proof: "Same baseline protects every Pointz user today.",
   },
 ];
 
@@ -42,7 +42,7 @@ const Services = () => {
           <div className="lg:col-span-7">
             <p className="label-mono mb-4">§ 00 — Hire me for</p>
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
-              What I do <span className="font-serif-italic font-normal text-primary">for teams</span>.
+              What I do <span className="text-primary">for teams</span>.
             </h2>
           </div>
           <div className="lg:col-span-5 lg:pl-6 lg:border-l lg:border-border/60">
@@ -85,9 +85,9 @@ const Services = () => {
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm px-6 py-5">
           <div>
-            <p className="label-mono mb-1">Engagement model</p>
+            <p className="label-mono mb-1">How we'd work together</p>
             <p className="text-foreground/85 text-base md:text-lg">
-              Full-time, contract-to-hire, or hourly. Comfortable in US, EU, and APAC timezones.
+              Fixed-scope sprint, monthly retainer, or hourly via Upwork (Top Rated Plus). US, EU &amp; APAC overlap.
             </p>
           </div>
           <a

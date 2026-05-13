@@ -10,7 +10,7 @@ const Education = () => {
           <div className="lg:col-span-7">
             <p className="label-mono mb-4">§ 03 — Education</p>
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
-              The <span className="font-serif-italic font-normal text-primary">paper</span> trail.
+              The <span className="text-primary">paper</span> trail.
             </h2>
           </div>
           <div className="lg:col-span-5 lg:pl-6 lg:border-l lg:border-border/60">

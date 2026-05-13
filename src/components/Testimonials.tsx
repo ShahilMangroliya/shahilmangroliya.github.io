@@ -69,7 +69,7 @@ const Testimonials = () => {
           <div className="lg:col-span-7">
             <p className="label-mono mb-4">§ — What clients say</p>
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
-              <span className="font-serif-italic font-normal text-primary">Verified</span> by
+              <span className="text-primary">Verified</span> by
               <br />
               the people who hired me.
             </h2>

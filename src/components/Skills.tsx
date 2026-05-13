@@ -63,7 +63,7 @@ const Skills = () => {
           <div className="lg:col-span-7">
             <p className="label-mono mb-4">§ 02 — The stack I reach for</p>
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
-              Pragmatic, <span className="font-serif-italic font-normal text-primary">secure</span>,
+              Pragmatic, <span className="text-primary">secure</span>,
               <br />
               shippable.
             </h2>

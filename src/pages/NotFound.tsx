@@ -24,7 +24,7 @@ const NotFound = () => {
 
         <h1 className="font-display text-[28vw] sm:text-[200px] font-bold leading-[0.85] tracking-[-0.05em]">
           <span className="text-foreground">4</span>
-          <span className="font-serif-italic font-normal text-primary">0</span>
+          <span className="text-primary">0</span>
           <span className="text-foreground">4</span>
         </h1>
 

@@ -63,9 +63,9 @@ const featured: Project = {
   id: "pointz",
   index: "00",
   name: "Pointz — Safer Bike Mapping",
-  tagline: "Navigation for cyclists, owned end-to-end.",
+  tagline: "Navigation for cyclists, led end-to-end as Head of Engineering.",
   blurb:
-    "Pointz is a community-powered navigation app for cyclists. I've owned its stack across three roles — frontend → full-stack → Head of Engineering — re-architecting the navigation core, designing the security baseline, hardening the API tier, and slashing infrastructure spend.",
+    "Pointz is a community-powered navigation app for cyclists; I joined a year after launch and grew into the lead role across three titles — frontend → full-stack → Head of Engineering — re-architecting the navigation core, designing the security baseline, hardening the API tier, and slashing infrastructure spend.",
   role: "Former Head of Engineering · now on ad-hoc maintenance retainer",
   status: "Shipped",
   year: "2022 → now",
@@ -435,7 +435,7 @@ const Projects = () => {
                 <h1 className="font-display font-bold leading-[0.92] tracking-[-0.045em] text-[15vw] sm:text-[12vw] md:text-[9.5vw] lg:text-[8vw]">
                   Selected
                   <br />
-                  <span className="font-serif-italic font-normal text-primary">work</span>
+                  <span className="text-primary">work</span>
                   <span className="text-primary animate-blink">.</span>
                 </h1>
                 <p className="max-w-2xl text-lg md:text-xl text-foreground/85 leading-snug">
@@ -449,7 +449,7 @@ const Projects = () => {
                   <p className="label-mono">Counts</p>
                   <ul className="space-y-1 font-mono text-[13px] text-foreground/80">
                     <li className="flex justify-between gap-3"><span>Shipped apps</span><span className="text-primary">5</span></li>
-                    <li className="flex justify-between gap-3"><span>Owned platforms</span><span className="text-primary">1</span></li>
+                    <li className="flex justify-between gap-3"><span>Platforms led</span><span className="text-primary">1</span></li>
                     <li className="flex justify-between gap-3"><span>Stealth in-flight</span><span className="text-primary">1</span></li>
                     <li className="flex justify-between gap-3"><span>5★ Upwork reviews</span><span className="text-primary">3</span></li>
                   </ul>
@@ -487,7 +487,7 @@ const Projects = () => {
                       <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.035em] leading-[0.95]">
                         Pointz —
                         <br />
-                        <span className="font-serif-italic font-normal text-primary">safer bike mapping.</span>
+                        <span className="text-primary">safer bike mapping.</span>
                       </h2>
                     </div>
                   </div>
@@ -595,7 +595,7 @@ const Projects = () => {
               <div className="lg:col-span-7">
                 <p className="label-mono mb-4">∆ The way I work</p>
                 <h2 className="font-display text-4xl md:text-6xl font-bold leading-[0.95] tracking-[-0.04em]">
-                  Four things I <span className="font-serif-italic font-normal text-primary">refuse</span> to compromise on.
+                  Four things I <span className="text-primary">refuse</span> to compromise on.
                 </h2>
               </div>
               <div className="lg:col-span-5 lg:pl-6 lg:border-l lg:border-border/60">
@@ -634,7 +634,7 @@ const Projects = () => {
                 <div className="lg:col-span-8 space-y-5">
                   <p className="label-mono">→ Next chapter</p>
                   <h2 className="font-display text-4xl md:text-6xl font-bold leading-[0.95] tracking-[-0.04em]">
-                    Have a hard product <span className="font-serif-italic font-normal text-primary">waiting</span> for an owner?
+                    Have a hard product <span className="text-primary">waiting</span> for an owner?
                   </h2>
                   <p className="text-foreground/80 leading-relaxed max-w-2xl">
                     I'm best at being the single engineer who carries a product end-to-end. If you have one of those — or just want to swap notes — let's talk.
