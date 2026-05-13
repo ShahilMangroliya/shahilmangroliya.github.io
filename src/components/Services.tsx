@@ -5,8 +5,8 @@ const services = [
     icon: Sparkles,
     eyebrow: "4–6 week sprint · fixed scope",
     title: "Ship your AI-native MVP",
-    body: "From Figma or napkin to a real product in users' hands — RN + Node + LLM/agent layer, auth, payments, the works. Built the way I ship my own stealth AI startup, not the way an agency ships yours.",
-    proof: "Daily driver: Claude Code, subagents, custom skill stacks.",
+    body: "From Figma or napkin to a real product in users' hands — RN + Node + LLM/agent layer, auth, payments, the works. Built the way I shipped my own AI-native MVP as founding engineer, not the way an agency ships yours.",
+    proof: "Shipped a stealth AI MVP solo with Claude Code (Dec 2025 → Apr 2026).",
   },
   {
     icon: Rocket,

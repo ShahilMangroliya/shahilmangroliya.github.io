@@ -57,7 +57,7 @@ const Education = () => {
                 “Ship it. Then improve the ship.”
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Currently going deep on AI-native engineering — Claude Code, custom skills, subagent workflows — applied inside the stealth startup I'm building full-time.
+                Daily driver for AI-native engineering — Claude Code, custom skills, subagent workflows. Shipped the MVP of an AI-native app as founding engineer (Dec 2025 → Apr 2026).
               </p>
             </div>
             <div className="pt-6 flex items-center gap-3">

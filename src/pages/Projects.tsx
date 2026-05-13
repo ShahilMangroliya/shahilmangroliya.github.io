@@ -102,21 +102,21 @@ const projects: Project[] = [
     id: "stealth-ai",
     index: "01",
     name: "Stealth — AI-native startup",
-    tagline: "My current full-time bet. AI workflows at the core.",
+    tagline: "Founding engineer. Shipped an AI-native MVP with Claude Code.",
     blurb:
-      "The product I'm building right now, full-time. Claude Code, custom skills, and subagent workflows sit at the center of the engineering loop — not bolted on. Architecture, naming, and details intentionally private until launch.",
-    role: "Solo founder / engineer · stealth — primary focus",
-    status: "Shipping",
-    year: "2025 — present",
+      "I joined as founding engineer and shipped the MVP solo, with Claude Code, custom skills, and subagent workflows sitting at the center of the engineering loop — not bolted on. Exited April 2026 after MVP delivery. Architecture, naming, and details remain private.",
+    role: "Founding Engineer · stealth — Dec 2025 → Apr 2026",
+    status: "Shipped",
+    year: "Dec 2025 → Apr 2026",
     stack: ["Claude Code", "Custom skills", "Subagent workflows", "AI orchestration", "TypeScript", "Python"],
     highlights: [
-      "Full-time owner of product, engineering, and AI workflow design.",
-      "Composing Claude Code skills and subagents into a daily engineering loop that compresses cycle time.",
-      "Designing the product so AI is a first-class collaborator, not a fallback.",
-      "More details public after launch.",
+      "Founding engineer: owned product, engineering, and AI workflow design from zero.",
+      "Composed Claude Code skills and subagents into a daily engineering loop that compressed cycle time.",
+      "Designed the product so AI was a first-class collaborator, not a fallback.",
+      "MVP shipped; exited April 2026.",
     ],
     stats: [
-      { value: "Full-time", label: "primary work" },
+      { value: "MVP", label: "shipped solo" },
       { value: "AI-native", label: "core loop" },
     ],
     icon: Sparkles,
@@ -439,7 +439,7 @@ const Projects = () => {
                   <span className="text-primary animate-blink">.</span>
                 </h1>
                 <p className="max-w-2xl text-lg md:text-xl text-foreground/85 leading-snug">
-                  Seven builds — one I own today, one stealth AI product I'm building right now, and five shipped for clients and studios.
+                  Seven builds — the platform I led as Head of Engineering, an AI-native MVP I shipped as founding engineer, and five for clients and studios.
                   Each one taught me something concrete about <span className="text-primary">how to ship under constraints.</span>
                 </p>
               </div>
@@ -450,7 +450,7 @@ const Projects = () => {
                   <ul className="space-y-1 font-mono text-[13px] text-foreground/80">
                     <li className="flex justify-between gap-3"><span>Shipped apps</span><span className="text-primary">5</span></li>
                     <li className="flex justify-between gap-3"><span>Platforms led</span><span className="text-primary">1</span></li>
-                    <li className="flex justify-between gap-3"><span>Stealth in-flight</span><span className="text-primary">1</span></li>
+                    <li className="flex justify-between gap-3"><span>AI MVPs shipped</span><span className="text-primary">1</span></li>
                     <li className="flex justify-between gap-3"><span>5★ Upwork reviews</span><span className="text-primary">3</span></li>
                   </ul>
                 </div>

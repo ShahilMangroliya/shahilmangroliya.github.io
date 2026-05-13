@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 type SectionDef = { id: string; label: string };
@@ -26,7 +26,7 @@ const formatSuratTime = () => {
 const SideRail = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const sections = isHome ? HOME_SECTIONS : [];
+  const sections = useMemo<SectionDef[]>(() => (isHome ? HOME_SECTIONS : []), [isHome]);
   const [active, setActive] = useState<string>(sections[0]?.id ?? "");
   const [time, setTime] = useState<string>(formatSuratTime());
 

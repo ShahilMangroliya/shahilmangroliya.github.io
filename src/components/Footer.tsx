@@ -17,7 +17,7 @@ const Footer = () => {
               Shahil<span className="text-primary">.</span>
             </Link>
             <p className="text-base text-foreground/80 max-w-md leading-relaxed">
-              Senior software engineer. Building a stealth AI startup; Pointz on retainer for ad-hoc maintenance. Top Rated Plus on Upwork (top 3%) with a 100% Job Success score.
+              Senior software engineer. Founding engineer of a stealth AI app — shipped the MVP with Claude Code (Dec 2025 → Apr 2026). Pointz on retainer. Top Rated Plus on Upwork (top 3%) with a 100% Job Success score.
             </p>
             <div className="flex flex-wrap items-center gap-2">
               <a

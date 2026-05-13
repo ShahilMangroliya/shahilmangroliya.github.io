@@ -37,7 +37,7 @@ const Hero = () => {
                 <span className="absolute inset-0 rounded-full bg-primary blur-[3px] opacity-70" />
               </span>
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/80">
-                Building · AI-native stealth startup · Pointz on retainer
+                Available · Ex founding eng @ stealth AI · Pointz on retainer
               </span>
             </div>
             <a
@@ -93,7 +93,7 @@ const Hero = () => {
             <div className="space-y-1.5">
               <p className="label-mono">Now</p>
               <p className="text-sm text-foreground/85 leading-relaxed">
-                Booking <span className="text-primary">1 retainer slot</span> + short MVP sprints. Currently building a stealth AI product full-time and on retainer with Pointz.
+                Booking <span className="text-primary">sprints + 1 retainer slot</span>. Most recent: founding engineer of a stealth AI app — shipped the MVP with Claude Code, exited Apr 2026. Pointz on retainer.
               </p>
             </div>
           </aside>

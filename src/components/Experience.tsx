@@ -18,6 +18,24 @@ type ExperienceEntry = {
 
 const experiences: ExperienceEntry[] = [
   {
+    company: "Stealth AI Startup",
+    location: "Remote",
+    period: "Dec 2025 → Apr 2026",
+    meta: "AI-native consumer app · Claude Code + LLM stack",
+    tags: ["Founding Engineer", "AI-native MVP", "Claude Code", "LLM workflows"],
+    roles: [
+      {
+        title: "Founding Engineer",
+        period: "Dec 2025 → Apr 2026",
+        achievements: [
+          "Shipped the MVP of an AI-native consumer app, using Claude Code + custom subagent workflows as the daily engineering driver.",
+          "Owned product, mobile, backend, LLM orchestration, and payments from zero — the full founding-engineer remit.",
+          "Exited April 2026 after MVP delivery; back available for sprint and retainer work.",
+        ],
+      },
+    ],
+  },
+  {
     company: "Pointz Mobility",
     location: "Remote (USA)",
     period: "Aug 2022 → Present",
@@ -29,9 +47,9 @@ const experiences: ExperienceEntry[] = [
         title: "Engineering Consultant — ad-hoc maintenance",
         period: "2025 — Present",
         achievements: [
-          "On retainer for the platform I built: handling fixes, change requests, and stability work as they come up.",
+          "On retainer for the platform I led as Head of Engineering: handling fixes, change requests, and stability work as they come up.",
           "Stayed the trusted owner of the codebase — security, infra, payments, and mobile — without the daily-driver load.",
-          "Frees up the bulk of my time for the stealth AI startup I'm building now.",
+          "Frees up the bulk of my time for sprint and retainer engagements.",
         ],
       },
       {
