@@ -16,7 +16,6 @@ import {
   Zap,
   TrendingDown,
   Users,
-  Waves,
   Star,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -31,8 +30,7 @@ type VisualKind =
   | "trace-bust"
   | "prank-caller"
   | "stormglass"
-  | "madina"
-  | "surf-club";
+  | "madina";
 
 type Review = {
   rating: number;
@@ -55,6 +53,7 @@ type Project = {
   icon: typeof Bike;
   accent: "primary" | "secondary";
   link?: { href: string; label: string };
+  links?: { href: string; label: string }[];
   github?: string;
   visual: VisualKind;
   review?: Review;
@@ -66,7 +65,7 @@ const featured: Project = {
   name: "Pointz — Safer Bike Mapping",
   tagline: "Navigation for cyclists, led end-to-end as Head of Engineering.",
   blurb:
-    "Pointz is a community-powered navigation app for cyclists; I joined a year after launch and grew into the lead role across three titles — frontend → full-stack → Head of Engineering — re-architecting the navigation core, designing the security baseline, hardening the API tier, and slashing infrastructure spend.",
+    "Pointz is a community-powered navigation app for cyclists — a turn-by-turn GPS with a \"safety slider\" that lets riders trade speed for safer streets, plus crowdsourced hazards, ride tracking, Strava + GPX, and 24/7 US roadside assistance. I joined a year after launch and grew into the lead role across three titles — frontend → full-stack → Head of Engineering — re-architecting the navigation core, designing the security baseline, hardening the API tier, and slashing infrastructure spend.",
   role: "Former Head of Engineering · now on ad-hoc maintenance retainer",
   status: "Shipped",
   year: "2022 → now",
@@ -89,6 +88,11 @@ const featured: Project = {
   icon: Bike,
   accent: "primary",
   link: { href: "https://www.bikepointz.com", label: "bikepointz.com" },
+  links: [
+    { href: "https://www.bikepointz.com", label: "bikepointz.com" },
+    { href: "https://apps.apple.com/us/app/pointz-plan-safer-on-bikes/id1580218237", label: "App Store" },
+    { href: "https://play.google.com/store/apps/details?id=com.pointzofficialapp", label: "Google Play" },
+  ],
   visual: "pointz",
   review: {
     rating: 5,
@@ -100,8 +104,85 @@ const featured: Project = {
 
 const projects: Project[] = [
   {
-    id: "stealth-ai",
+    id: "prank-caller",
     index: "01",
+    name: "Prank Caller — Phone Dial App",
+    tagline: "Playful phone-dial app, now an AI voice prankster.",
+    blurb:
+      "A phone-dial prank app — today an AI-powered prank caller where users pick voice characters, run live prank scenarios, and share recordings to a community feed. When I was on the build, the brief was a buttery drawer animation: I shipped a custom drawer holding a steady 60 fps and a prank-chat messaging surface.",
+    role: "React Native Developer · Artistry Solutions",
+    status: "Shipped",
+    year: "2021",
+    stack: ["React Native", "Reanimated", "Gesture Handler"],
+    highlights: [
+      "Custom drawer animation with sustained 60-fps smoothness.",
+      "Built a prank-chat messaging UI with playful micro-interactions.",
+      "Foundation that later evolved into an AI voice + community-sharing product.",
+    ],
+    icon: PhoneCall,
+    accent: "secondary",
+    visual: "prank-caller",
+    links: [
+      { href: "https://apps.apple.com/us/app/prank-caller-phone-dial-app/id1142839494", label: "App Store" },
+      { href: "https://play.google.com/store/apps/details?id=prank.caller.funny.dial.fake.id.app", label: "Google Play" },
+    ],
+  },
+  {
+    id: "moodme",
+    index: "02",
+    name: "MoodMe — Relationship Tracker",
+    tagline: "Daily mood check-ins, journaling, and games for couples.",
+    blurb:
+      "A relationship app where couples log moods across 400+ emotion indicators, run weekly check-ins, play connection games, share a journal, and stay aware of each other via home-screen widgets. I led the Firebase messaging + deep-linking work and stabilised the app across a long tail of devices. It crossed 100K downloads across iOS and Android.",
+    role: "React Native Developer · Artistry Solutions",
+    status: "Shipped",
+    year: "2020 — 2022",
+    stack: ["React Native", "Firebase", "Firebase Messaging", "Deep Links"],
+    highlights: [
+      "Wired Firebase messaging with deep links into the right in-app surfaces.",
+      "Bug-bashed the long tail of device-specific crashes — meaningful stability lift.",
+      "Helped the app cross 100K+ downloads across iOS and Android.",
+    ],
+    stats: [
+      { value: "100K+", label: "downloads" },
+      { value: "400+", label: "mood indicators" },
+      { value: "iOS + Android", label: "shipped on both" },
+    ],
+    icon: Heart,
+    accent: "secondary",
+    visual: "moodme",
+    links: [
+      { href: "https://apps.apple.com/us/app/moodme-relationship-tracker/id1586093391", label: "App Store" },
+      { href: "https://play.google.com/store/apps/details?id=com.tepia.moodme&hl=en_IN", label: "Google Play" },
+    ],
+  },
+  {
+    id: "trace-bust",
+    index: "03",
+    name: "Trace Bust — Fake Caller ID",
+    tagline: "Spoof caller ID instantly — refreshed in light & dark.",
+    blurb:
+      "Fake Caller ID is TraceBust, Inc.'s flagship mobile app — it lets users mask their real number with a premium caller ID, change their voice (masculine or feminine) on a live call, and record conversations for later. I modernised the aging React Native codebase: refreshed the UI, introduced robust light/dark theme switching, and rebuilt monetization on react-native-iap. Upgraded the toolchain so newer iOS and Android devices were supported cleanly.",
+    role: "React Native Developer · Artistry Solutions",
+    status: "Shipped",
+    year: "2021 — 2022",
+    stack: ["React Native", "react-native-iap", "Dark Mode", "iOS / Android"],
+    highlights: [
+      "Redesigned the UI around the spoof-call core flow — caller-ID picker, voice changer, recordings.",
+      "Introduced robust light/dark theme switching across every screen.",
+      "Rebuilt subscription monetization on react-native-iap as the primary revenue path.",
+      "Modernised the toolchain so newer iOS and Android devices were supported cleanly.",
+    ],
+    icon: PhoneCall,
+    accent: "primary",
+    visual: "trace-bust",
+    links: [
+      { href: "https://fakecallerid.io/", label: "fakecallerid.io" },
+    ],
+  },
+  {
+    id: "stealth-ai",
+    index: "04",
     name: "Stealth — AI-native startup",
     tagline: "Founding engineer. Shipped an AI-native MVP with Claude Code.",
     blurb:
@@ -126,7 +207,7 @@ const projects: Project[] = [
   },
   {
     id: "madina",
-    index: "02",
+    index: "05",
     name: "Madina Network Analysis",
     tagline: "Surfacing patterns in network data.",
     blurb:
@@ -145,99 +226,8 @@ const projects: Project[] = [
     visual: "madina",
   },
   {
-    id: "surf-club",
-    index: "03",
-    name: "Global Surf Club — React Native build",
-    tagline: "Mobile build for a community surf brand.",
-    blurb:
-      "A React Native build delivered as a fixed-price engagement on Upwork. Closed at 5.0 stars with a 100% recommendation review.",
-    role: "Freelance React Native Developer · Global Surf Club",
-    status: "Shipped",
-    year: "2022",
-    stack: ["React Native", "iOS", "Android", "Mobile UI"],
-    highlights: [
-      "Delivered a fixed-price mobile build end-to-end inside an Upwork engagement.",
-      "Closed the contract at 5.0 stars — \"Lovely guy, 100% recommend\" from the client.",
-    ],
-    stats: [
-      { value: "5.0", label: "Upwork rating" },
-      { value: "Fixed price", label: "engagement" },
-    ],
-    icon: Waves,
-    accent: "secondary",
-    visual: "surf-club",
-    review: {
-      rating: 5,
-      quote: "Lovely guy, 100% recommend.",
-      attribution: "Global Surf Club — Upwork client, Nov 2022",
-    },
-  },
-  {
-    id: "moodme",
-    index: "04",
-    name: "MoodMe — Relationship Mood",
-    tagline: "Daily check-ins for couples.",
-    blurb:
-      "A mood-tracking app for relationships. I led the messaging + deep-linking work and stabilised the app across a long tail of devices. It crossed 100K downloads across iOS and Android.",
-    role: "React Native Developer · Artistry Solutions",
-    status: "Shipped",
-    year: "2020 — 2022",
-    stack: ["React Native", "Firebase", "Firebase Messaging", "Deep Links"],
-    highlights: [
-      "Wired Firebase messaging with deep links into the right surfaces.",
-      "Bug-bashed the long tail of device-specific crashes — meaningful stability lift.",
-      "Helped the app cross 100K+ downloads across iOS and Android.",
-    ],
-    stats: [
-      { value: "100K+", label: "downloads" },
-      { value: "iOS + Android", label: "shipped on both" },
-    ],
-    icon: Heart,
-    accent: "secondary",
-    visual: "moodme",
-  },
-  {
-    id: "trace-bust",
-    index: "05",
-    name: "Trace Bust",
-    tagline: "Modernised utility app, light & dark.",
-    blurb:
-      "Took an aging utility app, refreshed the UI, introduced light/dark theme switching, and rebuilt monetization on react-native-iap. Upgraded the toolchain to support modern devices.",
-    role: "React Native Developer · Artistry Solutions",
-    status: "Shipped",
-    year: "2021 — 2022",
-    stack: ["React Native", "react-native-iap", "Dark Mode", "iOS / Android"],
-    highlights: [
-      "Redesigned the UI and introduced robust light/dark theme switching.",
-      "Modernised the toolchain so new devices were supported cleanly.",
-      "Wired in In-App Purchase via react-native-iap as the primary monetization path.",
-    ],
-    icon: Search,
-    accent: "primary",
-    visual: "trace-bust",
-  },
-  {
-    id: "prank-caller",
-    index: "06",
-    name: "Prank Caller",
-    tagline: "Custom 60-fps drawer + chat.",
-    blurb:
-      "A playful phone-dial app. The brief: a drawer animation that felt buttery. I built a custom drawer hitting a steady 60 fps and added a prank-chat messaging surface.",
-    role: "React Native Developer · Artistry Solutions",
-    status: "Shipped",
-    year: "2021",
-    stack: ["React Native", "Reanimated", "Gesture Handler"],
-    highlights: [
-      "Custom drawer animation with sustained 60-fps smoothness.",
-      "Built a prank-chat messaging UI with playful micro-interactions.",
-    ],
-    icon: PhoneCall,
-    accent: "secondary",
-    visual: "prank-caller",
-  },
-  {
     id: "stormglass",
-    index: "07",
+    index: "06",
     name: "Stormglass Weather Integration",
     tagline: "Took over a stalled mobile build.",
     blurb:
@@ -383,17 +373,20 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </figure>
         )}
 
-        {project.link && (
-          <div className="pt-3">
-            <a
-              href={project.link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.18em] text-primary hover:underline underline-offset-4"
-            >
-              {project.link.label}
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
+        {(project.links?.length || project.link) && (
+          <div className="pt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
+            {(project.links ?? (project.link ? [project.link] : [])).map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.18em] text-primary hover:underline underline-offset-4"
+              >
+                {l.label}
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            ))}
           </div>
         )}
       </div>
@@ -405,7 +398,7 @@ const Projects = () => {
   usePageMeta({
     title: "Selected Projects · Shahil Mangroliya — AI MVP & React Native Builds",
     description:
-      "Seven builds by Shahil Mangroliya — Pointz (Head of Engineering), an AI-native MVP shipped as founding engineer, and five client/studio apps. React Native, Spring Boot, AWS, Claude Code.",
+      "Six builds by Shahil Mangroliya — Pointz (Head of Engineering), an AI-native MVP shipped as founding engineer, and four client/studio apps. React Native, Spring Boot, AWS, Claude Code.",
     canonical: "https://shahilmangroliya.github.io/projects",
   });
 
@@ -447,7 +440,7 @@ const Projects = () => {
                   <span className="text-primary animate-blink">.</span>
                 </h1>
                 <p className="max-w-2xl text-lg md:text-xl text-foreground/85 leading-snug">
-                  Seven builds — the platform I led as Head of Engineering, an AI-native MVP I shipped as founding engineer, and five for clients and studios.
+                  Six builds — the platform I led as Head of Engineering, an AI-native MVP I shipped as founding engineer, and four for clients and studios.
                   Each one taught me something concrete about <span className="text-primary">how to ship under constraints.</span>
                 </p>
               </div>
@@ -456,7 +449,7 @@ const Projects = () => {
                 <div className="space-y-1.5">
                   <p className="label-mono">Counts</p>
                   <ul className="space-y-1 font-mono text-[13px] text-foreground/80">
-                    <li className="flex justify-between gap-3"><span>Shipped apps</span><span className="text-primary">5</span></li>
+                    <li className="flex justify-between gap-3"><span>Shipped apps</span><span className="text-primary">4</span></li>
                     <li className="flex justify-between gap-3"><span>Platforms led</span><span className="text-primary">1</span></li>
                     <li className="flex justify-between gap-3"><span>AI MVPs shipped</span><span className="text-primary">1</span></li>
                     <li className="flex justify-between gap-3"><span>5★ Upwork reviews</span><span className="text-primary">3</span></li>
@@ -519,17 +512,33 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {featured.link && (
-                    <a
-                      href={featured.link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 font-mono text-[12px] uppercase tracking-[0.18em] text-primary-foreground transition-all hover:shadow-glow"
-                    >
-                      Open {featured.link.label}
-                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </a>
-                  )}
+                  <div className="flex flex-wrap items-center gap-3">
+                    {featured.link && (
+                      <a
+                        href={featured.link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 font-mono text-[12px] uppercase tracking-[0.18em] text-primary-foreground transition-all hover:shadow-glow"
+                      >
+                        Open {featured.link.label}
+                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </a>
+                    )}
+                    {featured.links
+                      ?.filter((l) => l.href !== featured.link?.href)
+                      .map((l) => (
+                        <a
+                          key={l.href}
+                          href={l.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-5 py-3.5 font-mono text-[12px] uppercase tracking-[0.18em] text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                        >
+                          {l.label}
+                          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </a>
+                      ))}
+                  </div>
                 </div>
 
                 <div className="lg:col-span-5 lg:pl-8 lg:border-l lg:border-border/60 space-y-7">

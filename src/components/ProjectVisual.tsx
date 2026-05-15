@@ -4,8 +4,7 @@ type VisualKind =
   | "trace-bust"
   | "prank-caller"
   | "stormglass"
-  | "madina"
-  | "surf-club";
+  | "madina";
 
 type Props = {
   kind: VisualKind;
@@ -147,35 +146,6 @@ const Madina = () => (
   </svg>
 );
 
-const SurfClub = () => (
-  <svg viewBox="0 0 400 220" className="absolute inset-0 h-full w-full">
-    <defs>
-      <linearGradient id="sc-sky" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stopColor="hsl(24 92% 62%)" />
-        <stop offset="1" stopColor="hsl(340 90% 60%)" />
-      </linearGradient>
-      <linearGradient id="sc-sea" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stopColor="hsl(75 88% 58% / 0.7)" />
-        <stop offset="1" stopColor="hsl(75 88% 30%)" />
-      </linearGradient>
-    </defs>
-    <rect width="400" height="120" fill="url(#sc-sky)" />
-    <rect y="120" width="400" height="100" fill="url(#sc-sea)" />
-    {/* sun */}
-    <circle cx="300" cy="90" r="28" fill="hsl(38 22% 92%)" opacity="0.92" />
-    {/* waves */}
-    <path d="M 0 150 Q 50 140 100 150 T 200 150 T 300 150 T 400 150" stroke="hsl(38 22% 92% / 0.7)" strokeWidth="2" fill="none" />
-    <path d="M 0 175 Q 50 165 100 175 T 200 175 T 300 175 T 400 175" stroke="hsl(38 22% 92% / 0.5)" strokeWidth="2" fill="none" />
-    <path d="M 0 200 Q 50 190 100 200 T 200 200 T 300 200 T 400 200" stroke="hsl(38 22% 92% / 0.3)" strokeWidth="2" fill="none" />
-    {/* board */}
-    <g transform="translate(70,140) rotate(-12)">
-      <ellipse cx="0" cy="0" rx="48" ry="9" fill="hsl(30 10% 5%)" />
-      <ellipse cx="0" cy="-1" rx="48" ry="8" fill="hsl(38 22% 92%)" />
-      <line x1="-30" y1="-1" x2="30" y2="-1" stroke="hsl(75 88% 58%)" strokeWidth="2" />
-    </g>
-  </svg>
-);
-
 const renderers: Record<VisualKind, () => JSX.Element> = {
   pointz: Pointz,
   moodme: MoodMe,
@@ -183,7 +153,6 @@ const renderers: Record<VisualKind, () => JSX.Element> = {
   "prank-caller": PrankCaller,
   stormglass: Stormglass,
   madina: Madina,
-  "surf-club": SurfClub,
 };
 
 const ProjectVisual = ({ kind, className = "", size = "card" }: Props) => {

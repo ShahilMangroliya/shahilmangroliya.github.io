@@ -41,14 +41,6 @@ const testimonials: Testimonial[] = [
     context: "240 hours · 'Professional' soft-skill tag",
     date: "Feb — Apr 2024",
   },
-  {
-    rating: 5,
-    quote: "Lovely guy, 100% recommend.",
-    author: "Upwork client",
-    role: "Global Surf Club — React Native",
-    context: "Fixed-price engagement",
-    date: "Aug — Nov 2022",
-  },
 ];
 
 const stats = [
