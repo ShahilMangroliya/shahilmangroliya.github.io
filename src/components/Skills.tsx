@@ -1,4 +1,5 @@
 import { Code2, Server, Shield, Cloud, Puzzle, Languages, Sparkles } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 type Category = {
   icon: typeof Code2;
@@ -54,61 +55,60 @@ const categories: Category[] = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="relative py-28 md:py-36 overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-px hairline" aria-hidden />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,hsl(24_92%_40%/0.07),transparent_60%)]" aria-hidden />
-
+    <section id="skills" className="relative section-top-rule py-24 md:py-32 overflow-hidden">
       <div className="container relative z-10 mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-12 gap-8 items-end mb-14">
+        <Reveal className="grid lg:grid-cols-12 gap-8 items-end mb-14 md:mb-16">
           <div className="lg:col-span-7">
-            <p className="label-mono mb-4">§ 02 — The stack I reach for</p>
-            <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
+            <p className="section-tag mb-5">
+              <span className="section-tag__num">03</span>
+              <span className="section-tag__bar" />
+              <span>The stack I reach for</span>
+            </p>
+            <h2 className="font-display h-section">
               Pragmatic, <span className="text-primary">secure</span>,
               <br />
               shippable.
             </h2>
           </div>
-          <div className="lg:col-span-5 lg:pl-6 lg:border-l lg:border-border/60">
-            <p className="text-foreground/75 leading-relaxed">
-              I optimise for tools that let one engineer carry a product end-to-end. Anything below has shipped in production — most of it under my ownership today.
+          <div className="lg:col-span-5 lg:pl-8 lg:border-l lg:border-border/60">
+            <p className="text-ink-soft leading-[1.65] text-[15.5px]">
+              I optimise for tools that let one engineer carry a product end-to-end. Anything below has
+              shipped in production — most of it under my ownership today.
             </p>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/60">
           {categories.map((c, idx) => (
-            <article
+            <Reveal
+              as="article"
               key={c.title}
-              className="group relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm p-6 md:p-7 transition-all duration-500 hover:border-primary/40 hover:shadow-card animate-fade-in"
-              style={{ animationDelay: `${idx * 0.05}s` }}
+              delay={idx * 60}
+              className="group relative bg-background p-7 transition-colors duration-500 hover:bg-card/50"
             >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden>
-                <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-primary/10 blur-2xl" />
-              </div>
-
-              <div className="relative flex items-start justify-between mb-5">
+              <div className="flex items-start justify-between mb-5">
                 <div className="flex items-center gap-3">
-                  <div className="grid place-items-center h-10 w-10 rounded-xl border border-border/80 bg-card/70 text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-500">
-                    <c.icon className="h-[18px] w-[18px]" />
+                  <div className="grid place-items-center h-10 w-10 rounded-lg border border-border/80 bg-card/60 text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-500">
+                    <c.icon className="h-[17px] w-[17px]" />
                   </div>
                   <div>
-                    <h3 className="font-display text-xl font-semibold tracking-tight leading-tight">{c.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-tight">{c.caption}</p>
+                    <h3 className="font-display text-[20px] tracking-[-0.02em] leading-tight">{c.title}</h3>
+                    <p className="text-[12.5px] text-muted-foreground leading-tight mt-0.5">{c.caption}</p>
                   </div>
                 </div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-muted-foreground">
                   {String(idx + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              <div className="relative flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-1.5">
                 {c.skills.map((s) => (
                   <span key={s} className="tag-chip">
                     {s}
                   </span>
                 ))}
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

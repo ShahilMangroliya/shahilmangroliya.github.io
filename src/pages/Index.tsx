@@ -17,7 +17,7 @@ const Index = () => {
   usePageMeta({
     title: "Shahil Mangroliya · Fractional CTO & AI MVP Engineer for Founders",
     description:
-      "Fractional CTO and founding engineer. I help founders ship AI-native MVPs in 4–6 weeks and rescue stalled React Native builds. Ex Head of Engineering at Pointz. Top Rated Plus on Upwork.",
+      "Fractional CTO and founding engineer. I help founders ship AI-native MVPs in 4–6 weeks and rescue stalled React Native builds. Ex Head of Engineering at Pointz Mobility.",
     canonical: "https://shahilmangroliya.github.io/",
   });
 

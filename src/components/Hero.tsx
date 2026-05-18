@@ -1,193 +1,267 @@
-import { Github, Linkedin, Mail, ArrowDownRight, Sparkles, Compass, BadgeCheck } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import portrait from "@/assets/image/1.jpg";
 
 const UPWORK_URL = "https://www.upwork.com/freelancers/~014ca1b42c6232598c";
 
 const stack = [
-  "React Native", "TypeScript", "Node.js", "Python", "Spring Boot",
-  "AWS", "PostgreSQL", "MongoDB", "Stripe", "RevenueCat",
-  "Mapbox", "Firebase", "Docker", "Next.js", "Redux",
-  "Claude Code", "PKCE", "SSL Pinning",
+  "React Native",
+  "TypeScript",
+  "Node.js",
+  "Python",
+  "Spring Boot",
+  "AWS",
+  "PostgreSQL",
+  "Stripe",
+  "RevenueCat",
+  "Mapbox",
+  "Firebase",
+  "Docker",
+  "Next.js",
+  "Claude Code",
 ];
 
 const stats = [
-  { label: "Years shipping", value: "5+", note: "since 2020" },
-  { label: "Upwork JSS", value: "100%", note: "Top Rated Plus · top 3%" },
-  { label: "AWS cost cut", value: "65%", note: "while at Pointz" },
-  { label: "App downloads", value: "100K+", note: "MoodMe — iOS + Android" },
+  { value: "5+", label: "Years shipping", note: "since 2020" },
+  { value: "100K+", label: "App downloads", note: "MoodMe · iOS + Android" },
+  { value: "65%", label: "AWS cost cut", note: "while at Pointz" },
+  { value: "1,300+", label: "Hours on Upwork", note: "since 2023" },
 ];
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden pt-24 pb-16 md:pt-28">
-      {/* Layered background */}
-      <div className="absolute inset-0 grid-bg opacity-[0.45]" aria-hidden />
-      <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,#000_30%,transparent_80%)]" aria-hidden>
-        <div className="absolute top-[18%] left-1/2 -translate-x-1/2 h-[420px] w-[820px] rounded-full bg-primary/20 blur-[140px] animate-glow-pulse" />
-        <div className="absolute top-[55%] left-[18%] h-[300px] w-[300px] rounded-full bg-secondary/15 blur-[120px] animate-glow-pulse" style={{ animationDelay: "1.2s" }} />
-      </div>
+    <section className="relative overflow-hidden pt-28 md:pt-32 pb-20 md:pb-28">
+      {/* Subtle radial atmosphere */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 45% at 50% 0%, hsl(38 92% 50% / 0.08), transparent 60%)",
+        }}
+      />
 
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         {/* Status row */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-10 md:mb-14 animate-fade-down">
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-border/70 bg-card/40 backdrop-blur-md pl-1.5 pr-3 py-1.5">
-              <span className="relative inline-flex h-2 w-2">
-                <span className="absolute inset-0 rounded-full bg-primary animate-glow-pulse" />
-                <span className="absolute inset-0 rounded-full bg-primary blur-[3px] opacity-70" />
-              </span>
-              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/80">
-                Available · Ex founding eng @ stealth AI · Pointz on retainer
-              </span>
-            </div>
-            <a
-              href={UPWORK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-primary transition-all hover:bg-primary hover:text-primary-foreground"
-              aria-label="Upwork — Top Rated Plus profile"
-            >
-              <BadgeCheck className="h-3.5 w-3.5" />
-              Top Rated Plus · 100% JSS
-            </a>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-12 md:mb-16 animate-fade-down">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <span className="status-pill">
+              <span className="status-dot" />
+              Available · Booking sprints + 1 retainer
+            </span>
           </div>
-          <div className="hidden sm:flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span>Surat · GMT+05:30</span>
+          <div className="hidden sm:flex items-center gap-3 font-mono text-[10.5px] uppercase tracking-[0.24em] text-muted-foreground">
+            <span>Surat · India</span>
             <span className="h-px w-8 bg-border" />
-            <span>Open to work</span>
+            <span>GMT +05:30</span>
           </div>
         </div>
 
-        {/* Headline */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-end">
-          <div className="lg:col-span-9 space-y-6">
-            <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground flex items-center gap-3 animate-fade-down" style={{ animationDelay: "0.05s" }}>
-              <span className="text-primary">⌘</span>
-              <span>Portfolio / 2026 / v1</span>
-            </div>
+        {/* Headline grid */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+          {/* Left — name + tagline */}
+          <div className="lg:col-span-8 space-y-7 order-2 lg:order-1">
+            <p
+              className="section-tag animate-fade-down"
+              style={{ animationDelay: "0.05s" }}
+            >
+              <span className="section-tag__bar" />
+              <span>Portfolio · 2026</span>
+            </p>
 
-            <h1 className="font-display font-bold leading-[0.92] tracking-[-0.045em] text-[18vw] sm:text-[14vw] md:text-[11vw] lg:text-[9.2vw] xl:text-[8.4vw] animate-fade-in">
+            <h1
+              className="font-display h-display animate-fade-up"
+              style={{ fontWeight: 600 }}
+            >
               <span className="block text-foreground">Shahil</span>
               <span className="block">
                 <span className="text-foreground">Mangroliya</span>
-                <span className="text-primary animate-blink">.</span>
+                <span className="text-primary">.</span>
               </span>
             </h1>
 
-            <p className="max-w-2xl text-lg md:text-2xl leading-snug text-foreground/85 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              I help founders ship <span className="text-primary">AI-native MVPs</span> and rescue stalled <span className="text-foreground">React Native</span> builds — solo, or as fractional CTO. Top Rated Plus on Upwork; previously <span className="text-foreground">Head of Engineering</span> at <span className="underline decoration-primary/60 underline-offset-4">Pointz</span>, the safer-bike-mapping platform.
+            <p
+              className="max-w-2xl text-[17px] md:text-xl leading-[1.5] text-ink-soft animate-fade-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              I help founders ship{" "}
+              <span className="text-foreground font-medium">AI-native MVPs</span>{" "}
+              and rescue stalled{" "}
+              <span className="text-foreground font-medium">React Native</span>{" "}
+              builds — solo, or as fractional CTO. Previously{" "}
+              <span className="text-foreground font-medium">Head of Engineering</span> at{" "}
+              <a
+                href="https://www.bikepointz.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-underline text-foreground font-medium"
+              >
+                Pointz
+              </a>
+              , the safer-bike-mapping platform.
             </p>
-          </div>
 
-          {/* Right meta column */}
-          <aside className="lg:col-span-3 lg:pl-6 lg:border-l lg:border-border/60 space-y-5 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <div className="space-y-1.5">
-              <p className="label-mono">Index</p>
-              <ul className="space-y-1 font-mono text-[12px] text-foreground/80">
-                <li className="flex justify-between gap-3"><a href="#work" className="hover:text-primary transition-colors">01 — Work</a><span className="text-muted-foreground">timeline</span></li>
-                <li className="flex justify-between gap-3"><a href="#skills" className="hover:text-primary transition-colors">02 — Stack</a><span className="text-muted-foreground">tools</span></li>
-                <li className="flex justify-between gap-3"><Link to="/projects" className="hover:text-primary transition-colors">03 — Projects</Link><span className="text-muted-foreground">six builds</span></li>
-                <li className="flex justify-between gap-3"><a href="#contact" className="hover:text-primary transition-colors">04 — Contact</a><span className="text-muted-foreground">say hi</span></li>
-              </ul>
-            </div>
-            <div className="space-y-1.5">
-              <p className="label-mono">Now</p>
-              <p className="text-sm text-foreground/85 leading-relaxed">
-                Booking <span className="text-primary">sprints + 1 retainer slot</span>. Most recent: founding engineer of a stealth AI app — shipped the MVP with Claude Code, exited Apr 2026. Pointz on retainer.
+            <div
+              className="flex items-start gap-4 max-w-2xl pt-1 animate-fade-up"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <span className="mt-2 h-px w-10 bg-primary/60 shrink-0" aria-hidden />
+              <p className="text-[14px] md:text-[15px] text-ink-soft leading-[1.65]">
+                <span className="eyebrow eyebrow--accent mr-2">Now</span>
+                Most recent: founding engineer at a stealth AI startup —
+                shipped the MVP solo with Claude Code (Dec 2025 → Apr 2026).
+                Pointz on retainer. Open for new work.
               </p>
             </div>
+
+            {/* CTA row */}
+            <div
+              className="flex flex-wrap items-center gap-3 pt-4 animate-fade-up"
+              style={{ animationDelay: "0.45s" }}
+            >
+              <Link to="/projects" className="btn-primary group">
+                <span>Selected projects</span>
+                <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+              </Link>
+              <a href="#contact" className="btn-ghost group">
+                <Mail className="h-4 w-4" />
+                <span>Start a conversation</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right — portrait */}
+          <aside
+            className="lg:col-span-4 order-1 lg:order-2 animate-fade-up"
+            style={{ animationDelay: "0.18s" }}
+          >
+            <figure className="group/portrait relative mx-auto w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[380px] lg:ml-auto">
+              <div className="relative rounded-2xl border border-border/70 bg-card/40 p-2.5 transition-transform duration-700 ease-out group-hover/portrait:-translate-y-1">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+                  <img
+                    src={portrait}
+                    alt="Shahil Mangroliya — founding engineer and fractional CTO"
+                    loading="eager"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover/portrait:scale-[1.04]"
+                  />
+                  {/* Bottom gradient for caption legibility */}
+                  <div
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%]"
+                    style={{
+                      background:
+                        "linear-gradient(to top, hsl(225 14% 4% / 0.92), transparent)",
+                    }}
+                    aria-hidden
+                  />
+                  {/* Subtle ring */}
+                  <div
+                    className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/5"
+                    aria-hidden
+                  />
+
+                  <figcaption className="absolute inset-x-0 bottom-0 px-5 pb-5 pt-12">
+                    <div className="flex items-end justify-between gap-3">
+                      <div className="min-w-0">
+                        <p className="font-mono text-[9.5px] uppercase tracking-[0.28em] text-primary/90 mb-2">
+                          Founding eng · Fractional CTO
+                        </p>
+                        <p className="font-display text-[22px] leading-[1] tracking-[-0.025em] text-white">
+                          Shahil Mangroliya
+                        </p>
+                        <p className="mt-1.5 font-mono text-[9px] uppercase tracking-[0.26em] text-white/55">
+                          Surat · GMT +5:30
+                        </p>
+                      </div>
+                      <span className="shrink-0 inline-flex items-center rounded-md border border-white/15 bg-white/[0.06] px-2 py-1 font-mono text-[9px] uppercase tracking-[0.22em] text-white/75 backdrop-blur-sm">
+                        2026
+                      </span>
+                    </div>
+                  </figcaption>
+                </div>
+              </div>
+
+              {/* Bottom meta line */}
+              <div className="mt-3 flex items-center justify-between font-mono text-[9.5px] uppercase tracking-[0.24em] text-muted-foreground">
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-soft" />
+                  In studio
+                </span>
+                <span>v · 2026.05</span>
+              </div>
+            </figure>
           </aside>
         </div>
 
-        {/* CTA + Social */}
-        <div className="mt-14 flex flex-wrap items-center gap-3 md:gap-4 animate-fade-in" style={{ animationDelay: "0.45s" }}>
-          <Link
-            to="/projects"
-            className="group relative inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 font-mono text-[12px] uppercase tracking-[0.18em] text-primary-foreground transition-all duration-300 hover:shadow-glow"
-          >
-            <span>See selected projects</span>
-            <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
-          </Link>
+        {/* Social rail */}
+        <div
+          className="mt-16 flex flex-wrap items-center gap-2 animate-fade-up"
+          style={{ animationDelay: "0.55s" }}
+        >
           <a
-            href="#contact"
-            className="group inline-flex items-center gap-3 rounded-full border border-border/80 bg-card/40 px-6 py-3.5 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/85 backdrop-blur-md transition-all duration-300 hover:border-primary/60 hover:text-primary"
+            href="https://github.com/ShahilMangroliya"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="grid place-items-center h-11 w-11 rounded-full border border-border/70 bg-card/40 text-foreground/85 transition-all duration-300 hover:border-primary/60 hover:text-primary"
           >
-            <Mail className="h-4 w-4" />
-            <span>hi@shahil — open a thread</span>
+            <Github className="h-[17px] w-[17px]" />
           </a>
-          <div className="ml-auto flex items-center gap-2">
-            <a
-              href="https://github.com/ShahilMangroliya"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="grid place-items-center h-11 w-11 rounded-full border border-border/70 bg-card/40 backdrop-blur-md text-foreground/85 transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-glow"
-            >
-              <Github className="h-[18px] w-[18px]" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shahil-mangroliya/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="grid place-items-center h-11 w-11 rounded-full border border-border/70 bg-card/40 backdrop-blur-md text-foreground/85 transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-glow"
-            >
-              <Linkedin className="h-[18px] w-[18px]" />
-            </a>
-            <a
-              href={UPWORK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Upwork profile (Top Rated Plus)"
-              className="grid place-items-center h-11 px-3.5 rounded-full border border-border/70 bg-card/40 backdrop-blur-md text-foreground/85 transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-glow"
-            >
-              <span className="font-mono text-[11px] uppercase tracking-[0.18em] font-semibold">Upwork</span>
-            </a>
-          </div>
+          <a
+            href="https://www.linkedin.com/in/shahil-mangroliya/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="grid place-items-center h-11 w-11 rounded-full border border-border/70 bg-card/40 text-foreground/85 transition-all duration-300 hover:border-primary/60 hover:text-primary"
+          >
+            <Linkedin className="h-[17px] w-[17px]" />
+          </a>
+          <a
+            href={UPWORK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Upwork profile"
+            className="inline-flex items-center gap-2 h-11 px-4 rounded-full border border-border/70 bg-card/40 text-foreground/85 transition-all duration-300 hover:border-primary/60 hover:text-primary"
+          >
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em]">Upwork</span>
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
         </div>
 
-        {/* Stat strip */}
-        <div className="corner-frame relative mt-16 p-3 md:p-4 animate-fade-in" style={{ animationDelay: "0.55s" }}>
-          <span className="corner-frame__b1" aria-hidden />
-          <span className="corner-frame__b2" aria-hidden />
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/60">
+        {/* Stats — refined editorial grid */}
+        <div
+          className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/60 animate-fade-up"
+          style={{ animationDelay: "0.65s" }}
+        >
           {stats.map((s, i) => (
             <div
               key={s.label}
-              className="relative bg-background/95 backdrop-blur px-5 py-6 md:py-7 group hover:bg-card/70 transition-colors"
+              className="relative bg-background px-6 py-7 md:py-9 transition-colors hover:bg-card/40"
             >
-              <p className="label-mono mb-2 flex items-center gap-2">
-                <span className="text-primary">{String(i + 1).padStart(2, "0")}</span>
+              <p className="eyebrow mb-3 flex items-center gap-2.5">
+                <span className="text-primary font-medium">{String(i + 1).padStart(2, "0")}</span>
                 <span>{s.label}</span>
               </p>
-              <p className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-none tracking-[-0.04em]">
+              <p className="font-display text-4xl md:text-5xl text-foreground leading-none tracking-[-0.04em]">
                 {s.value}
               </p>
-              <p className="mt-2 text-sm text-muted-foreground">{s.note}</p>
-              <Sparkles className="absolute right-4 top-4 h-3.5 w-3.5 text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <p className="mt-2.5 text-[13px] text-muted-foreground">{s.note}</p>
             </div>
           ))}
-          </div>
         </div>
 
-        {/* Stack marquee */}
-        <div className="mt-14 relative">
-          <div className="flex items-center gap-3 mb-3">
-            <Compass className="h-3.5 w-3.5 text-primary" />
-            <p className="label-mono">Daily stack</p>
+        {/* Daily stack — restrained chips, not marquee */}
+        <div className="mt-16">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="eyebrow eyebrow--accent">Daily stack</span>
             <div className="hairline h-px flex-1" />
           </div>
-          <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
-            <div className="flex w-max marquee-track gap-3">
-              {[...stack, ...stack].map((s, i) => (
-                <span
-                  key={`${s}-${i}`}
-                  className="tag-chip whitespace-nowrap"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-1.5">
+            {stack.map((s) => (
+              <span key={s} className="tag-chip">
+                {s}
+              </span>
+            ))}
           </div>
         </div>
       </div>

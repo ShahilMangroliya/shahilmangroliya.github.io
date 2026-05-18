@@ -1,4 +1,5 @@
 import { ArrowUpRight, MapPin, Calendar } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 type Role = {
   title: string;
@@ -122,46 +123,45 @@ const experiences: ExperienceEntry[] = [
 
 const Experience = () => {
   return (
-    <section id="work" className="relative py-28 md:py-36 overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-px hairline" aria-hidden />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,hsl(75_88%_30%/0.06),transparent_60%)]" aria-hidden />
-
+    <section id="work" className="relative section-top-rule py-24 md:py-32 overflow-hidden">
       <div className="container relative z-10 mx-auto px-4 md:px-6">
-        {/* Section header */}
-        <div className="grid lg:grid-cols-12 gap-8 items-end mb-16">
+        {/* Header */}
+        <Reveal className="grid lg:grid-cols-12 gap-8 items-end mb-16 md:mb-20">
           <div className="lg:col-span-7">
-            <p className="label-mono mb-4">§ 01 — Work history</p>
-            <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-[-0.04em]">
+            <p className="section-tag mb-5">
+              <span className="section-tag__num">02</span>
+              <span className="section-tag__bar" />
+              <span>Work history</span>
+            </p>
+            <h2 className="font-display h-section">
               Five years of <span className="text-primary">shipping</span>,
               <br />
               owning, refactoring.
             </h2>
           </div>
-          <div className="lg:col-span-5 lg:pl-6 lg:border-l lg:border-border/60">
-            <p className="text-foreground/75 leading-relaxed">
-              From bug-fixing a 100K-download mood app to running the platform of a navigation startup — each chapter added a layer to how I build:
-              <span className="text-primary"> safer mobile, cheaper cloud, tighter APIs.</span>
+          <div className="lg:col-span-5 lg:pl-8 lg:border-l lg:border-border/60">
+            <p className="text-ink-soft leading-[1.65] text-[15.5px]">
+              From bug-fixing a 100K-download mood app to running the platform of a navigation startup —
+              each chapter added a layer to how I build:{" "}
+              <span className="text-foreground">safer mobile, cheaper cloud, tighter APIs.</span>
             </p>
           </div>
-        </div>
+        </Reveal>
 
         {/* Timeline */}
-        <ol className="relative space-y-20">
+        <ol className="relative space-y-20 md:space-y-24">
           {experiences.map((exp, expIdx) => (
-            <li
-              key={expIdx}
-              className="group grid lg:grid-cols-12 gap-6 lg:gap-10 animate-fade-in"
-              style={{ animationDelay: `${expIdx * 0.1}s` }}
-            >
+            <Reveal as="li" key={expIdx} className="grid lg:grid-cols-12 gap-7 lg:gap-12">
               {/* Left column: company */}
-              <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start space-y-4">
+              <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start space-y-5">
                 <div className="flex items-center gap-3">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-primary">
                     {String(expIdx + 1).padStart(2, "0")}
                   </span>
-                  <div className="h-px flex-1 bg-border/60 group-hover:bg-primary/60 transition-colors" />
+                  <div className="h-px flex-1 bg-border/60" />
                 </div>
-                <h3 className="font-display text-3xl md:text-4xl font-bold tracking-[-0.03em] text-foreground leading-tight">
+
+                <h3 className="font-display text-[30px] md:text-[36px] tracking-[-0.03em] text-foreground leading-[1.05]">
                   {exp.link ? (
                     <a
                       href={exp.link}
@@ -176,10 +176,10 @@ const Experience = () => {
                     exp.company
                   )}
                 </h3>
-                <p className="text-base text-foreground/85 leading-relaxed">
-                  {exp.meta}
-                </p>
-                <div className="flex flex-col gap-2 font-mono text-[12px] text-muted-foreground">
+
+                <p className="text-[14.5px] text-ink-soft leading-[1.6]">{exp.meta}</p>
+
+                <div className="flex flex-col gap-2 font-mono text-[11.5px] text-muted-foreground">
                   <span className="inline-flex items-center gap-2">
                     <Calendar className="h-3.5 w-3.5 text-primary/80" />
                     {exp.period}
@@ -189,6 +189,7 @@ const Experience = () => {
                     {exp.location}
                   </span>
                 </div>
+
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {exp.tags.map((t) => (
                     <span key={t} className="tag-chip">
@@ -199,17 +200,17 @@ const Experience = () => {
               </div>
 
               {/* Right column: roles */}
-              <div className="lg:col-span-8 space-y-8">
+              <div className="lg:col-span-8 space-y-5">
                 {exp.roles.map((role, rIdx) => (
                   <article
                     key={rIdx}
-                    className="relative rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm p-7 md:p-9 transition-all duration-500 hover:border-primary/40 hover:shadow-card"
+                    className="surface group/role p-7 md:p-9"
                   >
-                    <div className="flex flex-wrap items-baseline justify-between gap-2 mb-5">
-                      <h4 className="font-display text-xl md:text-2xl font-semibold text-foreground tracking-tight">
+                    <div className="flex flex-wrap items-baseline justify-between gap-2 mb-5 pb-5 border-b border-border/50">
+                      <h4 className="font-display text-[20px] md:text-[22px] text-foreground tracking-[-0.02em]">
                         {role.title}
                       </h4>
-                      <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                      <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-muted-foreground">
                         {role.period}
                       </span>
                     </div>
@@ -217,9 +218,9 @@ const Experience = () => {
                       {role.achievements.map((a, aIdx) => (
                         <li
                           key={aIdx}
-                          className="flex items-start gap-3 text-foreground/85 leading-relaxed"
+                          className="flex items-start gap-3.5 text-ink-soft leading-[1.62] text-[14.5px]"
                         >
-                          <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                          <span className="mt-[10px] inline-block h-[3px] w-[10px] bg-primary/80 shrink-0 rounded-sm" />
                           <span>{a}</span>
                         </li>
                       ))}
@@ -227,7 +228,7 @@ const Experience = () => {
                   </article>
                 ))}
               </div>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>
