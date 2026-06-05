@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import ScrollProgress from "./components/ScrollProgress";
+import AnalyticsProvider from "./components/AnalyticsProvider";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
@@ -7,6 +8,7 @@ import NotFound from "./pages/NotFound";
 const AppRoutes = () => (
   <>
     <ScrollProgress />
+    <AnalyticsProvider />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/projects" element={<Projects />} />
