@@ -23,3 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 .claude
+backup.md
+
+# Personal job-search kit — keep private, never commit (contains contacts + personal letters)
+job-search/
+*.csv
+project-story.txt
+*.pdf
