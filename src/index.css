@@ -72,8 +72,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Geist', system-ui, -apple-system, sans-serif;
-    font-feature-settings: "ss01", "ss02", "cv11";
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-image:
       radial-gradient(ellipse 70% 50% at 50% -8%, hsl(38 92% 35% / 0.07), transparent 70%),
       radial-gradient(ellipse 50% 40% at 100% 110%, hsl(38 92% 35% / 0.04), transparent 70%);
@@ -102,28 +101,27 @@
     background: hsl(var(--primary) / 0.5);
   }
 
-  /* Never italicize the display serif — user preference */
+  /* Never italicize display text — user preference */
   .font-display,
   .font-serif {
     font-style: normal !important;
-    font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
   }
 }
 
 @layer components {
   .font-display {
-    font-family: 'Fraunces', 'Times New Roman', Georgia, serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-weight: 600;
-    letter-spacing: -0.035em;
-    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
   }
 
+  /* Meta / label role — kept under the historical name so call sites stay put */
   .font-mono {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-feature-settings: "ss02", "cv11";
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
   }
 
-  /* Mono uppercase eyebrow — used everywhere as section / category label */
+  /* Uppercase eyebrow — used everywhere as section / category label */
   .eyebrow,
   .label-mono {
     @apply font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground;
@@ -171,7 +169,7 @@
 
   /* Pull-quote — non-italic, weight-driven editorial emphasis */
   .pull-quote {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-style: normal !important;
     font-weight: 500;
     letter-spacing: -0.02em;

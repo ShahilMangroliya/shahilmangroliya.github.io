@@ -15,10 +15,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["'Fraunces'", "'Times New Roman'", "serif"],
-        sans: ["'Geist'", "system-ui", "-apple-system", "sans-serif"],
-        serif: ["'Fraunces'", "Georgia", "serif"],
-        mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
+        display: ["'Inter'", "system-ui", "-apple-system", "sans-serif"],
+        sans: ["'Inter'", "system-ui", "-apple-system", "sans-serif"],
+        serif: ["'Inter'", "system-ui", "-apple-system", "sans-serif"],
+        mono: ["'Inter'", "system-ui", "-apple-system", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
