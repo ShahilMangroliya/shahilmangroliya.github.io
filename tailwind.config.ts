@@ -18,7 +18,7 @@ export default {
         display: ["'Inter'", "system-ui", "-apple-system", "sans-serif"],
         sans: ["'Inter'", "system-ui", "-apple-system", "sans-serif"],
         serif: ["'Inter'", "system-ui", "-apple-system", "sans-serif"],
-        mono: ["'Inter'", "system-ui", "-apple-system", "sans-serif"],
+        mono: ["'Geist Mono'", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
