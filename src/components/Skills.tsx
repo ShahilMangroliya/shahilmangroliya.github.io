@@ -60,7 +60,7 @@ const Skills = () => {
         <Reveal className="grid lg:grid-cols-12 gap-8 items-end mb-14 md:mb-16">
           <div className="lg:col-span-7">
             <p className="section-tag mb-5">
-              <span className="section-tag__num">03</span>
+              <span className="section-tag__num">04</span>
               <span className="section-tag__bar" />
               <span>The stack I reach for</span>
             </p>

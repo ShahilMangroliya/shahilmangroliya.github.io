@@ -31,7 +31,7 @@ const experiences: ExperienceEntry[] = [
         achievements: [
           "Shipped the MVP of an AI-native consumer app, using Claude Code + custom subagent workflows as the daily engineering driver.",
           "Owned product, mobile, backend, LLM orchestration, and payments from zero — the full founding-engineer remit.",
-          "Exited April 2026 after MVP delivery; back available for sprint and retainer work.",
+          "Delivered the MVP, then transitioned off after handover.",
         ],
       },
     ],
@@ -129,7 +129,7 @@ const Experience = () => {
         <Reveal className="grid lg:grid-cols-12 gap-8 items-end mb-16 md:mb-20">
           <div className="lg:col-span-7">
             <p className="section-tag mb-5">
-              <span className="section-tag__num">02</span>
+              <span className="section-tag__num">03</span>
               <span className="section-tag__bar" />
               <span>Work history</span>
             </p>

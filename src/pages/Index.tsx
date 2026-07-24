@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import ProjectsPreview from "@/components/ProjectsPreview";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Testimonials from "@/components/Testimonials";
@@ -15,9 +16,9 @@ const Index = () => {
   const location = useLocation();
 
   usePageMeta({
-    title: "Shahil Mangroliya · Fractional CTO & AI MVP Engineer for Founders",
+    title: "Shahil Mangroliya — Senior Software Engineer (Full-Stack · Mobile · Cloud)",
     description:
-      "Fractional CTO and founding engineer. I help founders ship AI-native MVPs in 4–6 weeks and rescue stalled React Native builds. Ex Head of Engineering at Pointz Mobility.",
+      "Senior software engineer — full-stack, mobile, and cloud. Open to senior/staff full-time roles (remote), and select fractional CTO / AI-native MVP engagements. Ex Head of Engineering at Pointz Mobility.",
     canonical: "https://shahilmangroliya.github.io/",
   });
 
@@ -36,6 +37,7 @@ const Index = () => {
       <main id="home">
         <Hero />
         <Services />
+        <ProjectsPreview />
         <Experience />
         <Skills />
         <Testimonials />
