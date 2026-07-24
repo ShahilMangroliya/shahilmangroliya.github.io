@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import {
   ArrowUpRight,
@@ -17,10 +17,15 @@ import {
   TrendingDown,
   Users,
   Star,
+  Briefcase,
+  FileText,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProjectVisual from "@/components/ProjectVisual";
+
+const EMAIL = "shahil.mangroliya@outlook.com";
+const UPWORK_URL = "https://www.upwork.com/freelancers/~014ca1b42c6232598c";
 
 type Stat = { value: string; label: string };
 
@@ -56,6 +61,7 @@ type Project = {
   links?: { href: string; label: string }[];
   github?: string;
   visual: VisualKind;
+  screenshot?: { src: string; alt: string };
   review?: Review;
 };
 
@@ -94,6 +100,10 @@ const featured: Project = {
     { href: "https://play.google.com/store/apps/details?id=com.pointzofficialapp", label: "Google Play" },
   ],
   visual: "pointz",
+  screenshot: {
+    src: "/screenshots/pointz.webp",
+    alt: "Pointz app on iPhone — turn-by-turn cycling navigation with step-by-step directions on a map.",
+  },
   review: {
     rating: 5,
     quote:
@@ -122,6 +132,10 @@ const projects: Project[] = [
     icon: PhoneCall,
     accent: "secondary",
     visual: "prank-caller",
+    screenshot: {
+      src: "/screenshots/prank-caller.webp",
+      alt: "Prank Caller app on iPhone — voice-character prank calling interface.",
+    },
     links: [
       { href: "https://apps.apple.com/us/app/prank-caller-phone-dial-app/id1142839494", label: "App Store" },
       { href: "https://play.google.com/store/apps/details?id=prank.caller.funny.dial.fake.id.app", label: "Google Play" },
@@ -151,6 +165,10 @@ const projects: Project[] = [
     icon: Heart,
     accent: "secondary",
     visual: "moodme",
+    screenshot: {
+      src: "/screenshots/moodme.webp",
+      alt: "MoodMe app on iPhone — posting a mood with the couples relationship-tracking interface.",
+    },
     links: [
       { href: "https://apps.apple.com/us/app/moodme-relationship-tracker/id1586093391", label: "App Store" },
       { href: "https://play.google.com/store/apps/details?id=com.tepia.moodme&hl=en_IN", label: "Google Play" },
@@ -176,6 +194,10 @@ const projects: Project[] = [
     icon: PhoneCall,
     accent: "primary",
     visual: "trace-bust",
+    screenshot: {
+      src: "/screenshots/trace-bust.png",
+      alt: "Trace Bust (Fake Caller ID) app — caller-ID spoofing and voice-changer interface.",
+    },
     links: [
       { href: "https://fakecallerid.io/", label: "fakecallerid.io" },
     ],
@@ -294,7 +316,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
   return (
     <article
-      className={`group relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm p-7 md:p-8 transition-all duration-500 ${accentBorder} hover:shadow-card`}
+      id={project.id}
+      className={`group relative scroll-mt-28 overflow-hidden rounded-2xl border border-border/60 bg-gradient-card backdrop-blur-sm p-7 md:p-8 transition-all duration-500 ${accentBorder} hover:shadow-card`}
     >
       <div className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-primary/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" aria-hidden />
 
@@ -311,7 +334,19 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </div>
 
       <div className="relative mb-6">
-        <ProjectVisual kind={project.visual} />
+        {project.screenshot ? (
+          <figure className="mx-auto w-fit max-w-full overflow-hidden rounded-xl border border-border/70 bg-background/60">
+            <img
+              src={project.screenshot.src}
+              alt={project.screenshot.alt}
+              loading="lazy"
+              decoding="async"
+              className="block h-56 md:h-64 w-auto max-w-full object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          </figure>
+        ) : (
+          <ProjectVisual kind={project.visual} />
+        )}
       </div>
 
       <div className="relative space-y-4">
@@ -402,9 +437,19 @@ const Projects = () => {
     canonical: "https://shahilmangroliya.github.io/projects",
   });
 
+  const location = useLocation();
+
+  // Deep links (/projects#pointz) land on the matching entry; a plain visit starts at the top.
   useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        const t = setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+        return () => clearTimeout(t);
+      }
+    }
     window.scrollTo({ top: 0, behavior: "auto" });
-  }, []);
+  }, [location]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -468,7 +513,10 @@ const Projects = () => {
               <div className="hairline h-px flex-1" />
             </div>
 
-            <article className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm animate-fade-in">
+            <article
+              id={featured.id}
+              className="relative scroll-mt-28 overflow-hidden rounded-3xl border border-primary/30 bg-gradient-card backdrop-blur-sm animate-fade-in"
+            >
               <div className="absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-primary/15 blur-3xl" aria-hidden />
               <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-secondary/10 blur-3xl" aria-hidden />
 
@@ -542,6 +590,18 @@ const Projects = () => {
                 </div>
 
                 <div className="lg:col-span-5 lg:pl-8 lg:border-l lg:border-border/60 space-y-7">
+                  {featured.screenshot && (
+                    <figure className="mx-auto w-fit max-w-full overflow-hidden rounded-2xl border border-border/70 bg-background/60">
+                      <img
+                        src={featured.screenshot.src}
+                        alt={featured.screenshot.alt}
+                        loading="lazy"
+                        decoding="async"
+                        className="block h-72 md:h-80 w-auto max-w-full object-contain"
+                      />
+                    </figure>
+                  )}
+
                   <ProjectVisual kind="pointz" size="feature" />
 
                   {featured.review && (
@@ -654,25 +714,49 @@ const Projects = () => {
                     Have a hard product <span className="text-primary">waiting</span> for an owner?
                   </h2>
                   <p className="text-foreground/80 leading-relaxed max-w-2xl">
-                    I'm best at being the single engineer who carries a product end-to-end. If you have one of those — or just want to swap notes — let's talk.
+                    I'm best at being the single engineer who carries a product end-to-end —
+                    on a team as a senior/staff engineer, or solo for a founder. Open to
+                    full-time remote roles and select contract work.
                   </p>
                 </div>
                 <div className="lg:col-span-4 flex flex-col gap-3">
-                  <Link
-                    to="/#contact"
+                  <a
+                    href={`mailto:${EMAIL}?subject=Full-time%20role%20%E2%80%94%20Senior%20Software%20Engineer`}
                     className="group inline-flex items-center justify-between gap-3 rounded-full bg-primary px-6 py-4 font-mono text-[12px] uppercase tracking-[0.18em] text-primary-foreground transition-all hover:shadow-glow"
                   >
                     <span className="inline-flex items-center gap-3">
+                      <Briefcase className="h-4 w-4" />
+                      Hiring full-time
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-between gap-3 rounded-full border border-primary/40 bg-primary/10 px-6 py-4 font-mono text-[12px] uppercase tracking-[0.18em] text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <span className="inline-flex items-center gap-3">
+                      <FileText className="h-4 w-4" />
+                      Download résumé
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                  <Link
+                    to="/#contact"
+                    className="group inline-flex items-center justify-between gap-3 rounded-full border border-border/70 bg-card/40 px-6 py-4 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/85 transition-all hover:border-primary/60 hover:text-primary"
+                  >
+                    <span className="inline-flex items-center gap-3">
                       <Mail className="h-4 w-4" />
-                      Open a thread
+                      MVP / fractional CTO
                     </span>
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                   <a
-                    href="https://www.upwork.com/freelancers/~014ca1b42c6232598c"
+                    href={UPWORK_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-between gap-3 rounded-full border border-primary/40 bg-primary/10 px-6 py-4 font-mono text-[12px] uppercase tracking-[0.18em] text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+                    className="group inline-flex items-center justify-between gap-3 rounded-full border border-border/70 bg-card/40 px-6 py-4 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground/85 transition-all hover:border-primary/60 hover:text-primary"
                   >
                     <span className="inline-flex items-center gap-3">
                       <Star className="h-4 w-4" />
