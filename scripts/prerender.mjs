@@ -12,9 +12,9 @@ const SITE = "https://shahilmangroliya.github.io";
 const routes = [
   {
     path: "/",
-    title: "Shahil Mangroliya · Fractional CTO & AI MVP Engineer for Founders",
+    title: "Shahil Mangroliya — Senior Software Engineer (Full-Stack · Mobile · Cloud)",
     description:
-      "Fractional CTO and founding engineer. I help founders ship AI-native MVPs in 4–6 weeks and rescue stalled React Native builds. Ex Head of Engineering at Pointz. Top Rated Plus on Upwork (100% JSS).",
+      "Senior software engineer — full-stack, mobile, and cloud. Open to senior/staff full-time roles (remote), and select fractional CTO / AI-native MVP engagements. Ex Head of Engineering at Pointz Mobility.",
     canonical: `${SITE}/`,
   },
   {
