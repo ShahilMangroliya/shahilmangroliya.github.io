@@ -745,7 +745,7 @@ const Projects = () => {
                   >
                     <span className="inline-flex items-center gap-3">
                       <Mail className="h-4 w-4" />
-                      MVP / fractional CTO
+                      MVP / retainer
                     </span>
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>

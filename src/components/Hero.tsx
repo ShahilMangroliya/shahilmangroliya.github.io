@@ -126,8 +126,8 @@ const Hero = () => {
               <span className="mt-2 h-px w-10 bg-primary/60 shrink-0" aria-hidden />
               <p className="text-[14px] md:text-[15px] text-ink-soft leading-[1.65]">
                 <span className="eyebrow eyebrow--accent mr-2">Open to</span>
-                Senior/staff full-time roles (remote) — and select fractional &amp;
-                MVP engagements.
+                Senior/staff full-time roles (remote) — and select MVP &amp;
+                contract engagements.
               </p>
             </div>
 
@@ -179,7 +179,7 @@ const Hero = () => {
                 <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
                   <img
                     src={portrait}
-                    alt="Shahil Mangroliya — founding engineer and fractional CTO"
+                    alt="Shahil Mangroliya — senior software engineer"
                     loading="eager"
                     decoding="async"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover/portrait:scale-[1.04]"

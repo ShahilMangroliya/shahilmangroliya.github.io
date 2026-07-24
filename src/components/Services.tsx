@@ -11,7 +11,7 @@ const services = [
   },
   {
     icon: Rocket,
-    eyebrow: "Retainer · fractional CTO",
+    eyebrow: "Retainer · sole engineer",
     title: "Sole engineer for one founder",
     body: "Own the product end-to-end — mobile, backend, infra, security, payments — while you raise, sell, hire. Same model I ran as Head of Engineering at Pointz, now offered to one founder at a time.",
     proof: "At Pointz: 1 engineer, 3 roles, 65% AWS cost cut.",

@@ -14,7 +14,7 @@ const routes = [
     path: "/",
     title: "Shahil Mangroliya — Senior Software Engineer (Full-Stack · Mobile · Cloud)",
     description:
-      "Senior software engineer — full-stack, mobile, and cloud. Open to senior/staff full-time roles (remote), and select fractional CTO / AI-native MVP engagements. Ex Head of Engineering at Pointz Mobility.",
+      "Senior software engineer — full-stack, mobile, and cloud. Open to senior/staff full-time roles (remote), and select AI-native MVP and contract engagements. Ex Head of Engineering at Pointz Mobility.",
     canonical: `${SITE}/`,
   },
   {

@@ -103,18 +103,18 @@ const Contact = () => {
           <div className="bg-background p-7 md:p-8 flex flex-col">
             <div className="flex items-center gap-2.5 mb-4">
               <Rocket className="h-4 w-4 text-primary" />
-              <p className="eyebrow">Need an MVP or fractional CTO</p>
+              <p className="eyebrow">Need an MVP or a long-term owner</p>
             </div>
             <h3 className="font-display text-[22px] md:text-[24px] tracking-[-0.025em] mb-2.5">
               Ship it, or rescue it
             </h3>
             <p className="text-ink-soft text-[14.5px] leading-[1.6] mb-6">
-              AI-native MVP sprint, fractional CTO retainer, or a stalled-build
+              AI-native MVP sprint, a long-term retainer, or a stalled-build
               rescue. Tell me the shape of the problem.
             </p>
             <div className="mt-auto flex flex-wrap gap-2.5">
               <a
-                href={`mailto:${EMAIL}?subject=Project%20%E2%80%94%20MVP%20%2F%20fractional%20CTO`}
+                href={`mailto:${EMAIL}?subject=Project%20%E2%80%94%20MVP%20%2F%20retainer`}
                 className="btn-primary"
               >
                 <Mail className="h-4 w-4" />
@@ -254,7 +254,7 @@ const Contact = () => {
                 <li className="flex items-start gap-3">
                   <span className="mt-[10px] inline-block h-[2px] w-[10px] bg-primary/80 shrink-0 rounded-sm" />
                   <span>
-                    <span className="text-foreground">Fractional CTO</span> retainer — one founder, full
+                    <span className="text-foreground">Retainer</span> — one founder, full
                     ownership.
                   </span>
                 </li>
