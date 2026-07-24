@@ -111,8 +111,10 @@ const Hero = () => {
               <span className="text-foreground font-medium">end-to-end</span> —
               mobile, backend, cloud, and security. Five years shipping in
               production: sole technical owner of a{" "}
-              <span className="text-foreground font-medium">US platform</span>,
-              and founding engineer on an{" "}
+              <span className="text-foreground font-medium">
+                consumer navigation platform
+              </span>
+              , and founding engineer on an{" "}
               <span className="text-foreground font-medium">AI-native MVP</span>.
             </p>
 
