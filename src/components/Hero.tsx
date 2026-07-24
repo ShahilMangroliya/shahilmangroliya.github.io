@@ -85,19 +85,22 @@ const Hero = () => {
               className="font-mono text-[12px] md:text-[13.5px] uppercase tracking-[0.2em] text-foreground/90 animate-fade-up"
               style={{ animationDelay: "0.15s" }}
             >
-              Senior Software Engineer
-              <span className="text-muted-foreground"> · Full-Stack · Mobile · Cloud</span>
-              <br className="hidden sm:block" />
-              <span className="text-primary">ex-Head of Engineering</span>
-              <span className="text-muted-foreground"> @ </span>
-              <a
-                href="https://www.bikepointz.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline text-foreground"
-              >
-                Pointz
-              </a>
+              <span className="block">
+                Senior Software Engineer
+                <span className="text-muted-foreground"> · Full-Stack · Mobile · Cloud</span>
+              </span>
+              <span className="block mt-1.5">
+                <span className="text-primary">ex-Head of Engineering</span>
+                <span className="text-muted-foreground"> @ </span>
+                <a
+                  href="https://www.bikepointz.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline text-foreground"
+                >
+                  Pointz
+                </a>
+              </span>
             </p>
 
             <p
