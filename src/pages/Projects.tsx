@@ -433,7 +433,7 @@ const Projects = () => {
   usePageMeta({
     title: "Selected Projects · Shahil Mangroliya — AI MVP & React Native Builds",
     description:
-      "Six builds by Shahil Mangroliya — Pointz (Head of Engineering), an AI-native MVP shipped as founding engineer, and four client/studio apps. React Native, Spring Boot, AWS, Claude Code.",
+      "Seven builds by Shahil Mangroliya — Pointz (Head of Engineering), an AI-native MVP shipped as founding engineer, and five client/studio apps. React Native, Spring Boot, AWS, Claude Code.",
     canonical: "https://shahilmangroliya.github.io/projects",
   });
 
@@ -485,7 +485,7 @@ const Projects = () => {
                   <span className="text-primary animate-blink">.</span>
                 </h1>
                 <p className="max-w-2xl text-lg md:text-xl text-foreground/85 leading-snug">
-                  Six builds — the platform I led as Head of Engineering, an AI-native MVP I shipped as founding engineer, and four for clients and studios.
+                  Seven builds — the platform I led as Head of Engineering, an AI-native MVP I shipped as founding engineer, and five for clients and studios.
                   Each one taught me something concrete about <span className="text-primary">how to ship under constraints.</span>
                 </p>
               </div>
