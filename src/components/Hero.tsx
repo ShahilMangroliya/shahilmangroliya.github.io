@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDownRight, ArrowUpRight, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import portrait from "@/assets/image/1.jpg";
 
@@ -47,7 +47,7 @@ const Hero = () => {
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="status-pill">
               <span className="status-dot" />
-              Available · Booking sprints + 1 retainer
+              Available · Full-time (remote) + select contract
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-3 font-mono text-[10.5px] uppercase tracking-[0.24em] text-muted-foreground">
@@ -80,6 +80,26 @@ const Hero = () => {
               </span>
             </h1>
 
+            {/* Title / employment identity — leads for the recruiter path */}
+            <p
+              className="font-mono text-[12px] md:text-[13.5px] uppercase tracking-[0.2em] text-foreground/90 animate-fade-up"
+              style={{ animationDelay: "0.15s" }}
+            >
+              Senior Software Engineer
+              <span className="text-muted-foreground"> · Full-Stack · Mobile · Cloud</span>
+              <br className="hidden sm:block" />
+              <span className="text-primary">ex-Head of Engineering</span>
+              <span className="text-muted-foreground"> @ </span>
+              <a
+                href="https://www.bikepointz.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-underline text-foreground"
+              >
+                Pointz
+              </a>
+            </p>
+
             <p
               className="max-w-2xl text-[17px] md:text-xl leading-[1.5] text-ink-soft animate-fade-up"
               style={{ animationDelay: "0.2s" }}
@@ -88,29 +108,32 @@ const Hero = () => {
               <span className="text-foreground font-medium">AI-native MVPs</span>{" "}
               and rescue stalled{" "}
               <span className="text-foreground font-medium">React Native</span>{" "}
-              builds — solo, or as fractional CTO. Previously{" "}
-              <span className="text-foreground font-medium">Head of Engineering</span> at{" "}
-              <a
-                href="https://www.bikepointz.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline text-foreground font-medium"
-              >
-                Pointz
-              </a>
-              , the safer-bike-mapping platform.
+              builds — solo, or as fractional CTO. Five years shipping mobile,
+              backend, and cloud end-to-end.
             </p>
 
+            {/* Full-time signal — visually secondary, opens the recruiter door */}
             <div
               className="flex items-start gap-4 max-w-2xl pt-1 animate-fade-up"
-              style={{ animationDelay: "0.3s" }}
+              style={{ animationDelay: "0.28s" }}
             >
               <span className="mt-2 h-px w-10 bg-primary/60 shrink-0" aria-hidden />
               <p className="text-[14px] md:text-[15px] text-ink-soft leading-[1.65]">
-                <span className="eyebrow eyebrow--accent mr-2">Now</span>
+                <span className="eyebrow eyebrow--accent mr-2">Open to</span>
+                Senior/staff full-time roles (remote) — and select fractional &amp;
+                MVP engagements.
+              </p>
+            </div>
+
+            <div
+              className="flex items-start gap-4 max-w-2xl pt-1 animate-fade-up"
+              style={{ animationDelay: "0.34s" }}
+            >
+              <span className="mt-2 h-px w-10 bg-border shrink-0" aria-hidden />
+              <p className="text-[14px] md:text-[15px] text-ink-soft leading-[1.65]">
+                <span className="eyebrow mr-2">Now</span>
                 Most recent: founding engineer at a stealth AI startup —
                 shipped the MVP solo with Claude Code (Dec 2025 → Apr 2026).
-                Pointz on retainer. Open for new work.
               </p>
             </div>
 
@@ -123,6 +146,15 @@ const Hero = () => {
                 <span>Selected projects</span>
                 <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
               </Link>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost group"
+              >
+                <FileText className="h-4 w-4" />
+                <span>Download résumé</span>
+              </a>
               <a href="#contact" className="btn-ghost group">
                 <Mail className="h-4 w-4" />
                 <span>Start a conversation</span>
@@ -164,7 +196,7 @@ const Hero = () => {
                     <div className="flex items-end justify-between gap-3">
                       <div className="min-w-0">
                         <p className="font-mono text-[9.5px] uppercase tracking-[0.28em] text-primary/90 mb-2">
-                          Founding eng · Fractional CTO
+                          Senior Software Engineer
                         </p>
                         <p className="font-display text-[22px] leading-[1] tracking-[-0.025em] text-white">
                           Shahil Mangroliya

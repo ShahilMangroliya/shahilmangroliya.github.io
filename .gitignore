@@ -30,3 +30,4 @@ job-search/
 *.csv
 project-story.txt
 *.pdf
+!resume.pdf

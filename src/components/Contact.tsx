@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, MapPin, Send, ArrowUpRight, Copy } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, Send, ArrowUpRight, Copy, FileText, Briefcase, Rocket } from "lucide-react";
 import { toast } from "sonner";
 import Reveal from "@/components/Reveal";
 
@@ -32,7 +32,7 @@ const Contact = () => {
         <Reveal className="grid lg:grid-cols-12 gap-8 items-end mb-14 md:mb-16">
           <div className="lg:col-span-7">
             <p className="section-tag mb-5">
-              <span className="section-tag__num">06</span>
+              <span className="section-tag__num">07</span>
               <span className="section-tag__bar" />
               <span>Open a thread</span>
             </p>
@@ -48,6 +48,84 @@ const Contact = () => {
               you're after — or you just want to talk shop —{" "}
               <span className="text-foreground">drop a line.</span>
             </p>
+          </div>
+        </Reveal>
+
+        {/* Dual-audience routing — full-time recruiters vs founders */}
+        <Reveal className="grid sm:grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/60 mb-6">
+          {/* Recruiters / full-time */}
+          <div className="bg-background p-7 md:p-8 flex flex-col">
+            <div className="flex items-center gap-2.5 mb-4">
+              <Briefcase className="h-4 w-4 text-primary" />
+              <p className="eyebrow">Hiring for a full-time role</p>
+            </div>
+            <h3 className="font-display text-[22px] md:text-[24px] tracking-[-0.025em] mb-2.5">
+              Senior / staff engineer, remote
+            </h3>
+            <p className="text-ink-soft text-[14.5px] leading-[1.6] mb-6">
+              Full-stack, mobile, and cloud. Email or connect on LinkedIn — the
+              résumé is one click away.
+            </p>
+            <div className="mt-auto flex flex-wrap gap-2.5">
+              <a
+                href={`mailto:${EMAIL}?subject=Full-time%20role%20%E2%80%94%20Senior%20Software%20Engineer`}
+                className="btn-primary"
+              >
+                <Send className="h-4 w-4" />
+                <span>Email me</span>
+              </a>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost"
+              >
+                <FileText className="h-4 w-4" />
+                <span>Résumé</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shahil-mangroliya/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost"
+              >
+                <Linkedin className="h-4 w-4" />
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Founders / contract */}
+          <div className="bg-background p-7 md:p-8 flex flex-col">
+            <div className="flex items-center gap-2.5 mb-4">
+              <Rocket className="h-4 w-4 text-primary" />
+              <p className="eyebrow">Need an MVP or fractional CTO</p>
+            </div>
+            <h3 className="font-display text-[22px] md:text-[24px] tracking-[-0.025em] mb-2.5">
+              Ship it, or rescue it
+            </h3>
+            <p className="text-ink-soft text-[14.5px] leading-[1.6] mb-6">
+              AI-native MVP sprint, fractional CTO retainer, or a stalled-build
+              rescue. Tell me the shape of the problem.
+            </p>
+            <div className="mt-auto flex flex-wrap gap-2.5">
+              <a
+                href={`mailto:${EMAIL}?subject=Project%20%E2%80%94%20MVP%20%2F%20fractional%20CTO`}
+                className="btn-primary"
+              >
+                <Mail className="h-4 w-4" />
+                <span>Start a project</span>
+              </a>
+              <a
+                href={UPWORK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost"
+              >
+                <span>Hire on Upwork</span>
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
         </Reveal>
 
