@@ -34,7 +34,7 @@ const Contact = () => {
             <p className="section-tag mb-5">
               <span className="section-tag__num">07</span>
               <span className="section-tag__bar" />
-              <span>Open a thread</span>
+              <span>Get in touch</span>
             </p>
             <h2 className="font-display h-section">
               Let's build <span className="text-primary">something</span>
@@ -62,9 +62,12 @@ const Contact = () => {
             <h3 className="font-display text-[22px] md:text-[24px] tracking-[-0.025em] mb-2.5">
               Senior / staff engineer, remote
             </h3>
-            <p className="text-ink-soft text-[14.5px] leading-[1.6] mb-6">
+            <p className="text-ink-soft text-[14.5px] leading-[1.6] mb-3">
               Full-stack, mobile, and cloud. Email or connect on LinkedIn — the
               résumé is one click away.
+            </p>
+            <p className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-primary mb-6">
+              Remote-first · overlaps US, EU &amp; APAC
             </p>
             <div className="mt-auto flex flex-wrap gap-2.5">
               <a
@@ -78,6 +81,7 @@ const Contact = () => {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Shahil-Mangroliya-Resume.pdf"
                 className="btn-ghost"
               >
                 <FileText className="h-4 w-4" />

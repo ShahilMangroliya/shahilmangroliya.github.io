@@ -42,20 +42,20 @@ const experiences: ExperienceEntry[] = [
     period: "Aug 2022 → Present",
     meta: "Safer-bike mapping · React Native + Spring Boot + AWS",
     link: "https://www.bikepointz.com",
-    tags: ["Head of Engineering (former)", "Maintenance retainer", "Backend", "Mobile", "AWS"],
+    tags: ["ex-Head of Engineering", "Maintenance retainer", "Backend", "Mobile", "AWS"],
     roles: [
       {
         title: "Engineering Consultant — ad-hoc maintenance",
-        period: "2025 — Present",
+        period: "Dec 2025 — Present",
         achievements: [
           "On retainer for the platform I led as Head of Engineering: handling fixes, change requests, and stability work as they come up.",
           "Stayed the trusted owner of the codebase — security, infra, payments, and mobile — without the daily-driver load.",
-          "Frees up the bulk of my time for sprint and retainer engagements.",
+          "Low-touch by design: the platform's day-to-day runs stable, so the work is fixes and change requests as they arise.",
         ],
       },
       {
         title: "Head of Engineering",
-        period: "Sep 2024 — 2025",
+        period: "Sep 2024 — Dec 2025",
         achievements: [
           "Sole technical owner of the platform — backend, frontend, databases, security, infrastructure.",
           "Built a security baseline of auth/session tokens, PKCE, SSL pinning, nonce validation, and at-rest/in-flight encryption.",
@@ -113,7 +113,7 @@ const experiences: ExperienceEntry[] = [
         period: "Sep 2020 — Aug 2022",
         achievements: [
           "MoodMe (Relationship Mood App) — wired Firebase messaging with deep links into the right pages, hardened device stability. The app crossed 100K+ downloads across iOS and Android.",
-          "Trace Bust — UI redesign with light/dark theme switching, modernized device support, and react-native-iap for in-app purchase.",
+          "Trace Bust — UI redesign with light/dark theme switching, a dependency lift that cleared store review, and react-native-iap for in-app purchase.",
           "Prank Caller — built a custom drawer animation at a steady 60 fps and shipped a prank-chat messaging surface.",
         ],
       },

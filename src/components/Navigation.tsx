@@ -53,7 +53,7 @@ const Navigation = () => {
                 Shahil Mangroliya
               </span>
               <span className="font-mono text-[9.5px] uppercase tracking-[0.26em] text-muted-foreground mt-1.5">
-              AI-Driven Software Engineer
+                Senior Software Engineer
               </span>
             </div>
           </Link>

@@ -119,7 +119,7 @@ const projects: Project[] = [
     name: "Prank Caller — Phone Dial App",
     tagline: "Playful phone-dial app, now an AI voice prankster.",
     blurb:
-      "A phone-dial prank app — today an AI-powered prank caller where users pick voice characters, run live prank scenarios, and share recordings to a community feed. When I was on the build, the brief was a buttery drawer animation: I shipped a custom drawer holding a steady 60 fps and a prank-chat messaging surface.",
+      "Users pick a voice character, run a live prank scenario, and share the recording to a community feed. When I was on the build, the brief came down to one thing: make it feel buttery. I shipped a custom drawer animation holding a steady 60 fps, plus the prank-chat messaging surface underneath it.",
     role: "React Native Developer · Artistry Solutions",
     status: "Shipped",
     year: "2021",
@@ -147,7 +147,7 @@ const projects: Project[] = [
     name: "MoodMe — Relationship Tracker",
     tagline: "Daily mood check-ins, journaling, and games for couples.",
     blurb:
-      "A relationship app where couples log moods across 400+ emotion indicators, run weekly check-ins, play connection games, share a journal, and stay aware of each other via home-screen widgets. I led the Firebase messaging + deep-linking work and stabilised the app across a long tail of devices. It crossed 100K downloads across iOS and Android.",
+      "A relationship app where couples log how they feel from 400+ selectable moods, run weekly check-ins, play connection games, share a journal, and stay aware of each other via home-screen widgets. I led the Firebase messaging + deep-linking work and stabilised the app across a long tail of devices. It crossed 100K downloads across iOS and Android.",
     role: "React Native Developer · Artistry Solutions",
     status: "Shipped",
     year: "2020 — 2022",
@@ -159,7 +159,7 @@ const projects: Project[] = [
     ],
     stats: [
       { value: "100K+", label: "downloads" },
-      { value: "400+", label: "mood indicators" },
+      { value: "400+", label: "selectable moods" },
       { value: "iOS + Android", label: "shipped on both" },
     ],
     icon: Heart,
@@ -180,7 +180,7 @@ const projects: Project[] = [
     name: "Trace Bust — Fake Caller ID",
     tagline: "Spoof caller ID instantly — refreshed in light & dark.",
     blurb:
-      "Fake Caller ID is TraceBust, Inc.'s flagship mobile app — it lets users mask their real number with a premium caller ID, change their voice (masculine or feminine) on a live call, and record conversations for later. I modernised the aging React Native codebase: refreshed the UI, introduced robust light/dark theme switching, and rebuilt monetization on react-native-iap. Upgraded the toolchain so newer iOS and Android devices were supported cleanly.",
+      "Fake Caller ID is TraceBust, Inc.'s flagship mobile app — mask your real number behind a premium caller ID, shift your voice masculine or feminine mid-call, and record the conversation for later. The hard part wasn't the features: I inherited a React Native codebase that had drifted years behind its native toolchain, and had to bring it back to shippable without breaking the paying subscriber base.",
     role: "React Native Developer · Artistry Solutions",
     status: "Shipped",
     year: "2021 — 2022",
@@ -189,15 +189,11 @@ const projects: Project[] = [
       "Redesigned the UI around the spoof-call core flow — caller-ID picker, voice changer, recordings.",
       "Introduced robust light/dark theme switching across every screen.",
       "Rebuilt subscription monetization on react-native-iap as the primary revenue path.",
-      "Modernised the toolchain so newer iOS and Android devices were supported cleanly.",
+      "Lifted React Native and the native dependencies to versions that cleared current App Store and Play review.",
     ],
     icon: PhoneCall,
     accent: "primary",
     visual: "trace-bust",
-    screenshot: {
-      src: "/screenshots/trace-bust.png",
-      alt: "Trace Bust (Fake Caller ID) app — caller-ID spoofing and voice-changer interface.",
-    },
     links: [
       { href: "https://fakecallerid.io/", label: "fakecallerid.io" },
     ],
@@ -497,7 +493,7 @@ const Projects = () => {
                     <li className="flex justify-between gap-3"><span>Shipped apps</span><span className="text-primary">4</span></li>
                     <li className="flex justify-between gap-3"><span>Platforms led</span><span className="text-primary">1</span></li>
                     <li className="flex justify-between gap-3"><span>AI MVPs shipped</span><span className="text-primary">1</span></li>
-                    <li className="flex justify-between gap-3"><span>5★ Upwork reviews</span><span className="text-primary">3</span></li>
+                    <li className="flex justify-between gap-3"><span>5★ Upwork reviews</span><span className="text-primary">3×</span></li>
                   </ul>
                 </div>
               </aside>
@@ -734,6 +730,7 @@ const Projects = () => {
                     href="/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
+                    download="Shahil-Mangroliya-Resume.pdf"
                     className="group inline-flex items-center justify-between gap-3 rounded-full border border-primary/40 bg-primary/10 px-6 py-4 font-mono text-[12px] uppercase tracking-[0.18em] text-primary transition-all hover:bg-primary hover:text-primary-foreground"
                   >
                     <span className="inline-flex items-center gap-3">

@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
       "He is not only extremely fast, but understands complexities of front-end, back-end and server management deeply. I highly recommend Shahil M. to anyone who needs any type of development done.",
     author: "Upwork client",
     role: "React Native SWE position",
-    context: "1,070 hours · $16,232 earned",
+    context: "1,070 hours",
     date: "Apr 2024 — Nov 2025",
   },
   {
@@ -46,9 +46,9 @@ const testimonials: Testimonial[] = [
 
 const stats = [
   { value: "5.0★", label: "Average rating" },
-  { value: "$20K+", label: "Total earnings" },
+  { value: "3×", label: "Five-star reviews" },
   { value: "1,311", label: "Hours logged" },
-  { value: "Since '24", label: "Active on Upwork" },
+  { value: "Since '23", label: "Active on Upwork" },
 ];
 
 const Testimonials = () => {

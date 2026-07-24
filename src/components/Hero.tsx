@@ -25,7 +25,7 @@ const stats = [
   { value: "5+", label: "Years shipping", note: "since 2020" },
   { value: "100K+", label: "App downloads", note: "MoodMe · iOS + Android" },
   { value: "65%", label: "AWS cost cut", note: "while at Pointz" },
-  { value: "1,300+", label: "Hours on Upwork", note: "since 2023" },
+  { value: "4", label: "Apps shipped", note: "iOS + Android, live today" },
 ];
 
 const Hero = () => {
@@ -107,12 +107,13 @@ const Hero = () => {
               className="max-w-2xl text-[17px] md:text-xl leading-[1.5] text-ink-soft animate-fade-up"
               style={{ animationDelay: "0.2s" }}
             >
-              I help founders ship{" "}
-              <span className="text-foreground font-medium">AI-native MVPs</span>{" "}
-              and rescue stalled{" "}
-              <span className="text-foreground font-medium">React Native</span>{" "}
-              builds — solo, or as fractional CTO. Five years shipping mobile,
-              backend, and cloud end-to-end.
+              Senior engineer who owns products{" "}
+              <span className="text-foreground font-medium">end-to-end</span> —
+              mobile, backend, cloud, and security. Five years shipping in
+              production: sole technical owner of a{" "}
+              <span className="text-foreground font-medium">US platform</span>,
+              and founding engineer on an{" "}
+              <span className="text-foreground font-medium">AI-native MVP</span>.
             </p>
 
             {/* Full-time signal — visually secondary, opens the recruiter door */}
@@ -153,6 +154,7 @@ const Hero = () => {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Shahil-Mangroliya-Resume.pdf"
                 className="btn-ghost group"
               >
                 <FileText className="h-4 w-4" />
